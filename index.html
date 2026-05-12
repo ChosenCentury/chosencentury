@@ -30,10 +30,9 @@
         .collection-label { color: var(--red); font-size: 10px; letter-spacing: 4px; font-weight: bold; text-transform: uppercase; }
 
         .shop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 0 40px 100px; margin-top: 20px; }
-        .product-card { border: 1px solid var(--faint); padding: 20px; background: #0a0a0a; transition: 0.3s; position: relative; display: flex; flex-direction: column; }
+        .product-card { border: 1px solid var(--faint); padding: 20px; background: #0a0a0a; transition: 0.3s; position: relative; display: flex; flex-direction: column; min-height: 450px; }
         .product-card:hover { border-color: var(--white); background: #111; }
 
-        /* IMAGE FIX: This ensures the images fill the space and load properly */
         .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: contain; background: #050505; margin-bottom: 15px; display: block; }
         
         .product-title { font-family: var(--D); font-size: 18px; text-transform: uppercase; display: block; line-height: 1.2; margin-bottom: 5px; }
@@ -47,14 +46,8 @@
         .f-logo { font-family: var(--D); font-size: 40px; margin-bottom: 10px; }
         .secure-badge { font-size: 9px; color: var(--dim); letter-spacing: 2px; margin-bottom: 30px; text-transform: uppercase; }
 
-        /* Responsive Logic */
         @media (max-width: 1200px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 650px) { .shop-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 600px) {
-            nav { flex-direction: column; padding: 20px; }
-            .nav-links { margin-top: 10px; }
-            header { padding: 30px 20px 10px; }
-        }
     </style>
 </head>
 <body>
@@ -85,7 +78,7 @@
             <img src="./1000268734.png">
             <span class="product-title">FAITH OVER FEAR</span>
             <span class="product-tag">Lightweight Edition</span>
-            <a href="https://chosencentury.etsy.com/listing/4487647129" class="buy-btn">Purchase on Etsy</a>
+            <a href="https://chosencentury.etsy.com/listing/4487647129" class="buy-btn">Purchase</a>
         </div>
 
         <div class="product-card">
@@ -93,7 +86,7 @@
             <img src="./1000268735.png">
             <span class="product-title">TRUST IN G-D</span>
             <span class="product-tag">Lightweight Edition</span>
-            <a href="https://chosencentury.etsy.com/listing/4487644417" class="buy-btn">Purchase on Etsy</a>
+            <a href="https://chosencentury.etsy.com/listing/4487644417" class="buy-btn">Purchase</a>
         </div>
 
         <div class="product-card">
@@ -101,7 +94,7 @@
             <img src="./1000268863.png">
             <span class="product-title">FAITH OVER FEAR</span>
             <span class="product-tag">Signature Edition</span>
-            <a href="https://chosencentury.etsy.com/listing/4479490168" class="buy-btn">Purchase on Etsy</a>
+            <a href="https://chosencentury.etsy.com/listing/4479490168" class="buy-btn">Purchase</a>
         </div>
 
         <div class="product-card">
@@ -109,11 +102,63 @@
             <img src="./1000269693.png">
             <span class="product-title">TRUST IN G-D</span>
             <span class="product-tag">Signature Edition</span>
-            <a href="https://chosencentury.etsy.com/listing/4475813402" class="buy-btn">Purchase on Etsy</a>
+            <a href="https://chosencentury.etsy.com/listing/4475813402" class="buy-btn">Purchase</a>
         </div>
 
         <div class="product-card">
             <div class="headline-badge">NEW RELEASE</div>
             <img src="./1000273250.png">
             <span class="product-title">PUT THE WORK IN</span>
-            <span class="product-tag">Signature Edition
+            <span class="product-tag">Signature Edition</span>
+            <a href="https://chosencentury.etsy.com/listing/4469981656" class="buy-btn">Purchase</a>
+        </div>
+
+        <div class="product-card">
+            <div class="headline-badge">ESSENTIAL</div>
+            <img src="./1000268721.png">
+            <span class="product-title">TRUST IN G-D</span>
+            <span class="product-tag">Daily Wear</span>
+            <a href="https://chosencentury.etsy.com" class="buy-btn">Purchase</a>
+        </div>
+
+        <div class="product-card">
+            <div class="headline-badge">COLLECTION</div>
+            <img src="./1000268869.png">
+            <span class="product-title">FAITH OVER FEAR</span>
+            <span class="product-tag">Alternative Fit</span>
+            <a href="https://chosencentury.etsy.com" class="buy-btn">Purchase</a>
+        </div>
+
+        <div class="product-card">
+            <div class="headline-badge">COLLECTION</div>
+            <img src="./1000269686.png">
+            <span class="product-title">TRUST IN G-D</span>
+            <span class="product-tag">Essential Fit</span>
+            <a href="https://chosencentury.etsy.com" class="buy-btn">Purchase</a>
+        </div>
+
+        <div class="product-card">
+            <div class="headline-badge">COLLECTION</div>
+            <img src="./1000273240.png">
+            <span class="product-title">PUT THE WORK IN</span>
+            <span class="product-tag">Classic Fit</span>
+            <a href="https://chosencentury.etsy.com" class="buy-btn">Purchase</a>
+        </div>
+
+        <div class="product-card">
+            <div class="headline-badge">COLLECTION</div>
+            <img src="./1000269693.png">
+            <span class="product-title">STAY CHOSEN</span>
+            <span class="product-tag">Limited Edition</span>
+            <a href="https://chosencentury.etsy.com" class="buy-btn">Purchase</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="f-logo">G-D IS THERE.</div>
+        <div class="secure-badge">SECURE CHECKOUT VIA ETSY FLAGSHIP STORE</div>
+        <div class="secure-badge" style="margin-top: 20px;">@CHOSENCENTURY18</div>
+    </footer>
+
+</body>
+</html>
