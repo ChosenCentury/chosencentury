@@ -1,205 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>ChosenCentury | Official</title>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Mono:wght@400&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --black:#050505; --white:#ece9e1; --dim:rgba(236,233,225,0.4);
-  --faint:rgba(236,233,225,0.07); --red:#b82222; --D:'Anton',sans-serif; --S:'Cormorant Garamond',serif; --M:'DM Mono',monospace;
-}
-body{background:var(--black);color:var(--white);font-family:var(--M);margin:0;overflow-x:hidden}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChosenCentury | Uniforms for the Faithful</title>
+    <style>
+        :root {
+            --black: #050505; --white: #ece9e1; --dim: rgba(236,233,225,0.4);
+            --faint: rgba(236,233,225,0.07); --red: #b82222; --D: 'Anton', sans-serif; --S: 'Cormorant Garamond', serif; --M: 'IBM Plex Mono', monospace;
+        }
+        body { background: var(--black); color: var(--white); font-family: var(--M); margin: 0; overflow-x: hidden; }
 
-/* Navigation */
-nav{display:flex; justify-content:space-between; align-items:center; padding:30px 40px; border-bottom:1px solid var(--faint); position:sticky; top:0; background:rgba(5,5,5,0.9); z-index:100; backdrop-filter:blur(10px);}
-.nav-brand{font-family:var(--S); font-style:italic; font-size:22px; color:var(--white); text-decoration:none;}
-.nav-links a{color:var(--white); text-decoration:none; font-size:10px; letter-spacing:2px; margin-left:30px; text-transform:uppercase; border:1px solid var(--dim); padding:8px 15px; transition:0.3s;}
-.nav-links a:hover{background:var(--white); color:var(--black);}
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--faint); }
+        .nav-brand { font-family: var(--S); font-style: italic; font-size: 22px; color: var(--white); text-decoration: none; }
+        .nav-links a { color: var(--white); text-decoration: none; font-size: 10px; letter-spacing: 2px; margin-left: 30px; text-transform: uppercase; border: 1px solid var(--white); padding: 8px 15px; transition: 0.3s; }
+        .nav-links a:hover { background: var(--white); color: var(--black); }
 
-/* Brand Header */
-header { padding: 40px 20px 10px; text-align: center; }
+        /* Brand Header */
+        header { padding: 40px 40px 20px; text-align: center; }
+        .brand-ttl { font-family: var(--D); font-size: clamp(60px, 15vw, 180px); letter-spacing: -4px; text-transform: uppercase; line-height: 0.9; }
+        .brand-sub { font-size: 12px; letter-spacing: 8px; color: var(--dim); text-transform: uppercase; margin-top: 10px; margin-bottom: 30px; }
 
-.brand-ttl{font-family:var(--D); font-size:clamp(60px, 15vw, 180px); letter-spacing:-4px; text-transform:uppercase; line-height:0.8; margin-bottom:20px;}
-.brand-sub{font-size:12px; letter-spacing:8px; color:var(--dim); text-transform:uppercase; 
-.mission-box { max-width: 750px; margin: 5px auto; border-top: 1px solid var(--faint); border-bottom: 1px solid var(--faint); padding: 5px 0; }
-.mission-txt { font-family: var(--S); font-style: italic; font-size: 20px; line-height: 1.2; color: var(--white); margin: 0;
+        .mission-box { max-width: 750px; margin: 10px auto; border-top: 1px solid var(--faint); border-bottom: 1px solid var(--faint); padding: 15px 0; }
+        .mission-txt { font-family: var(--S); font-style: italic; font-size: 20px; line-height: 1.3; color: var(--white); margin: 0; text-align: center; }
 
+        /* Grid Styling */
+        .collection-header { padding: 30px 40px 10px; text-align: left; }
+        .collection-label { color: var(--red); font-size: 10px; letter-spacing: 4px; font-weight: bold; text-transform: uppercase; }
 
-/* Grid Styling */
-.collection-header { padding: 10px 40px; text-align: left; }
-.collection-label{color:var(--red); font-size:10px; letter-spacing:4px; font-weight:bold;}
+        .shop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 0 40px 100px; margin-top: 20px; }
+        .product-card { border: 1px solid var(--faint); padding: 20px; background: #0a0a0a; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; display: flex; flex-direction: column; }
+        .product-card:hover { border-color: var(--white); transform: translateY(-8px); background: #111; }
 
-.shop-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; padding:0 40px 100px;}
-.product-card{border:1px solid var(--faint); padding:20px; background:#0a0a0a; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); display:flex; flex-direction:column;}
-.product-card:hover{border-color:var(--white); transform: translateY(-8px); background:#111;}
+        .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: contain; background: #050505; margin-bottom: 15px; }
+        .product-title { font-family: var(--D); font-size: 18px; text-transform: uppercase; display: block; line-height: 1.2; margin-bottom: 5px; }
+        .product-tag { font-size: 10px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
 
-.product-card img{width:100%; aspect-ratio:1/1; object-fit:contain; background:#050505; margin-bottom:15px;}
-.product-title{font-family:var(--D); font-size:18px; text-transform:uppercase; display:block; line-height:1.2; margin-bottom:5px;}
-.product-tag{font-size:10px; color:var(--dim); text-transform:uppercase; letter-spacing:1px; margin-bottom:15px;}
+        .headline-badge { background: var(--red); color: white; font-size: 8px; padding: 2px 8px; display: inline-block; margin-bottom: 10px; font-family: var(--M); }
 
-.headline-badge{background: var(--red); color: white; font-size: 8px; padding: 2px 8px; display: inline-block; margin-bottom: 12px; letter-spacing: 2px; font-weight: bold; width: fit-content;}
+        .buy-btn { display: block; width: 100%; padding: 12px; background: var(--white); color: var(--black); text-align: center; text-decoration: none; font-family: var(--D); font-size: 13px; text-transform: uppercase; margin-top: auto; transition: 0.2s; }
+        .buy-btn:hover { background: var(--red); color: var(--white); }
 
-/* The Buy Button */
-.buy-btn {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  background: var(--white);
-  color: var(--black);
-  text-align: center;
-  text-decoration: none;
-  font-family: var(--D);
-  font-size: 13px;
-  text-transform: uppercase;
-  margin-top: auto; /* Pushes button to bottom of card */
-  transition: 0.2s;
-}
-.buy-btn:hover {background: var(--red); color: var(--white);}
+        /* Footer */
+        footer { padding: 100px 40px; text-align: center; border-top: 1px solid var(--faint); background: #080808; }
+        .f-logo { font-family: var(--D); font-size: 40px; margin-bottom: 10px; }
+        .secure-badge { font-size: 9px; color: var(--dim); letter-spacing: 2px; margin-bottom: 30px; text-transform: uppercase; }
 
-/* Footer */
-footer{padding:100px 40px; text-align:center; border-top:1px solid var(--faint); background:#080808;}
-.f-logo{font-family:var(--D); font-size:40px; margin-bottom:10px;}
-.secure-badge{font-size:9px; color:var(--dim); letter-spacing:2px; margin-bottom:30px; text-transform:uppercase;}
+        /* Responsive Logic */
+        @media (max-width: 1200px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 650px) { .shop-grid { grid-template-columns: 1fr; } }
 
-@media(max-width:1200px){ .shop-grid{ grid-template-columns: repeat(2, 1fr); } }
-@media(max-width:650px){ .shop-grid{ grid-template-columns: 1fr; } }
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
-        padding: 15px !important;
-    }
-    .nav-links {
-        width: 100% !important;
-        justify-content: center !important;
-        gap: 10px !important;
-    }
-    .nav-links a {
-        padding: 8px 12px !important;
-        font-size: 11px !important;
-    }
-    header {
-        padding: 60px 20px !important;
-    }
-}
-</style>
-
+        @media (max-width: 600px) {
+            nav { flex-direction: column !important; align-items: center !important; gap: 15px !important; padding: 20px !important; }
+            .nav-links { width: 100% !important; justify-content: center !important; gap: 10px !important; display: flex; margin-top: 10px; }
+            .nav-links a { margin: 0 5px !important; padding: 8px 12px !important; font-size: 11px !important; }
+            header { padding: 40px 20px 10px !important; }
+            .mission-txt { font-size: 18px !important; }
+        }
+    </style>
 </head>
 <body>
 
-<nav>
-  <a href="#" class="nav-brand">ChosenCentury</a>
-  <div class="nav-links">
-    <a href="https://chosencentury.etsy.com" target="_blank">Shop All</a>
-    <a href="https://www.instagram.com/chosencentury18" target="_blank">Instagram</a>
-  </div>
-</nav>
+    <nav>
+        <a href="#" class="nav-brand">ChosenCentury</a>
+        <div class="nav-links">
+            <a href="https://chosencentury.etsy.com" target="_blank">Shop All</a>
+            <a href="https://www.instagram.com/chosencentury18" target="_blank">Instagram</a>
+        </div>
+    </nav>
 
-<header>
-  <div class="brand-ttl">CHOSEN<br>CENTURY</div>
-  <div class="brand-sub">UNIFORMS FOR THE FAITHFUL</div>
-  <p class="mission-txt">Streetwear built on the grit of the grind and the truth of the foundation.</p>
+    <header>
+        <div class="brand-ttl">CHOSEN<br>CENTURY</div>
+        <div class="brand-sub">UNIFORMS FOR THE FAITHFUL</div>
 
-  <div class="mission-box">
-    <p class="mission-txt">
-        Streetwear built on the grit of the grind and the truth of the foundation.
-    </p>
-</div>
+        <div class="mission-box">
+            <p class="mission-txt">
+                Streetwear built on the grit of the grind and the truth of the foundation.
+            </p>
+        </div>
+    </header>
 
-    </p>
-  </div>
-</header>
+    <div class="collection-header">
+        <span class="collection-label">HEADLINE DROP / 2026</span>
+    </div>
 
-<div class="collection-header">
-  <span class="collection-label">HEADLINE DROP / 2026</span>
-</div>
-
-<div class="shop-grid">
-  <div class="product-card">
-    <div class="headline-badge">NEW RELEASE</div>
-    <img src="1000268734.png">
-    <span class="product-title">FAITH OVER FEAR</span>
-    <span class="product-tag">Lightweight Edition</span>
-    <a href="https://chosencentury.etsy.com/listing/4487647129" class="buy-btn">Purchase on Etsy</a>
-  </div>
-
-  <div class="product-card">
-    <div class="headline-badge">NEW RELEASE</div>
-    <img src="1000268735.png">
-    <span class="product-title">TRUST IN G-D</span>
-    <span class="product-tag">Lightweight Edition</span>
-    <a href="https://chosencentury.etsy.com/listing/4487644417" class="buy-btn">Purchase on Etsy</a>
-  </div>
-
-  <div class="product-card">
-    <div class="headline-badge">NEW RELEASE</div>
-    <img src="1000268863.png">
-    <span class="product-title">FAITH OVER FEAR</span>
-    <span class="product-tag">Signature Edition</span>
-    <a href="https://chosencentury.etsy.com/listing/4479490168" class="buy-btn">Purchase on Etsy</a>
-  </div>
-
-  <div class="product-card">
-    <div class="headline-badge">NEW RELEASE</div>
-    <img src="1000269693.png">
-    <span class="product-title">TRUST IN G-D</span>
-    <span class="product-tag">Signature Edition</span>
-    <a href="https://chosencentury.etsy.com/listing/4475813402" class="buy-btn">Purchase on Etsy</a>
-  </div>
-
-  <div class="product-card">
-    <img src="1000273250.png">
-    <span class="product-title">PUT THE WORK IN</span>
-    <span class="product-tag">Signature Edition</span>
-    <a href="https://chosencentury.etsy.com/listing/4469981656" class="buy-btn">Purchase on Etsy</a>
-  </div>
-
-  <div class="product-card">
-    <img src="1000268721.png">
-    <span class="product-title">TRUST IN G-D Essential</span>
-    <span class="product-tag">Signature Edition</span>
-    <a href="https://chosencentury.etsy.com/listing/4470463365" class="buy-btn">Purchase on Etsy</a>
-  </div>
-
-  <div class="product-card">
-    <img src="1000268869.png">
-    <span class="product-title">LION GRAPHIC TEE</span>
-    <span class="product-tag">Signature Edition</span>
-    <a href="https://chosencentury.etsy.com/listing/4471098333" class="buy-btn">Purchase on Etsy</a>
-  </div>
-
-  <div class="product-card">
-    <img src="1000269686.png">
-    <span class="product-title">THE DIVINE COMPASS</span>
-    <span class="product-tag">Signature Edition</span>
-    <a href="https://chosencentury.etsy.com/listing/4483767062" class="buy-btn">Purchase on Etsy</a>
-  </div>
-
-  <div class="product-card">
-    <img src="1000273240.png">
-    <span class="product-title">ANCHORED WITH G-D</span>
-    <span class="product-tag">Signature Edition</span>
-    <a href="https://chosencentury.etsy.com/listing/4483580350" class="buy-btn">Purchase on Etsy</a>
-  </div>
-</div>
-
-<div class="mission-box" style="margin-top: 80px; margin-bottom: 40px; border: none;">
-    <p class="mission-txt" style="font-size: 16px; opacity: 0.8;">
-        ChosenCentury is a streetwear label built on the grit of the grind and the truth of the foundation. 
-        We create apparel that reminds you and everyone behind you that G-D is there. 
-        It's the uniform for the high-achiever who puts the work in and trusts the process.
-    </p>
-</div>
-<footer>
-  <div class="f-logo">G-D IS THERE.</div>
-  <div class="secure-badge">Secure Checkout via Etsy Flagship Store</div>
-  <a href="https://www.instagram.com/chosencentury18" style="color:var(--white); text-decoration:none; font-size:12px; letter-spacing:3px;">@CHOSENCENTURY18</a>
-  <div style="margin-top:40px; font-size:9px; color:var(--dim); letter-spacing:5px;">© 2026 CHOSENCENTURY APPAREL</div>
-</footer>
-
-</body>
-</html>
+    <div class="shop-grid">
+        <div class="product-card">
+            <div class="headline-badge">NEW RELEASE
