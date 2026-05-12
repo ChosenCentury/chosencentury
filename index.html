@@ -10,65 +10,50 @@
             --faint: rgba(236,233,225,0.08); --red: #b82222; --D: 'Anton', sans-serif; --S: 'Cormorant Garamond', serif; --M: 'IBM Plex Mono', monospace;
         }
         
+        * { box-sizing: border-box; }
+
         body { background: #050505; color: var(--white); font-family: var(--M); margin: 0; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
-        /* Nav - Locked & Sharp */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--faint); position: sticky; top: 0; background: rgba(5,5,5,0.98); backdrop-filter: blur(15px); z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; border-bottom: 1px solid var(--faint); position: sticky; top: 0; background: rgba(5,5,5,0.98); backdrop-filter: blur(15px); z-index: 1000; width: 100%; }
         .nav-brand { font-family: var(--S); font-style: italic; font-size: 24px; color: var(--white); text-decoration: none; font-weight: 700; }
-        .nav-links { display: flex; gap: 12px; }
-        .nav-links a { color: var(--white); text-decoration: none; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; border: 1px solid var(--white); padding: 8px 18px; transition: 0.2s; font-weight: bold; }
-        .nav-links a:hover { background: var(--white); color: var(--black); }
+        .nav-links { display: flex; gap: 10px; }
+        .nav-links a { color: var(--white); text-decoration: none; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid var(--white); padding: 6px 14px; font-weight: bold; }
 
-        header { padding: 80px 20px 60px; text-align: center; }
-        .brand-ttl { font-family: var(--D); font-size: clamp(75px, 18vw, 230px); letter-spacing: -7px; text-transform: uppercase; line-height: 0.8; margin: 0; }
-        .brand-sub { font-size: 10px; letter-spacing: 12px; color: var(--dim); text-transform: uppercase; margin-top: 30px; font-weight: bold; }
+        header { width: 100%; padding: 80px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .brand-ttl { font-family: var(--D); font-size: clamp(65px, 18vw, 220px); letter-spacing: -5px; text-transform: uppercase; line-height: 0.8; margin: 0; width: 100%; }
+        .brand-sub { font-size: 10px; letter-spacing: 8px; color: var(--dim); text-transform: uppercase; margin-top: 30px; font-weight: bold; width: 100%; }
 
-        /* The Breach (Restricted Section) */
-        .restricted-section { padding: 80px 40px; background: #000; border-top: 1px solid var(--faint); border-bottom: 1px solid var(--faint); text-align: center; }
-        .restricted-box { max-width: 900px; margin: 0 auto; border: 1px solid var(--red); padding: 0; position: relative; background: #000; overflow: hidden; }
-        .restricted-box img { width: 100%; display: block; filter: grayscale(100%) contrast(1.1); transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1); }
-        .restricted-box:hover img { filter: grayscale(0%) contrast(1); transform: scale(1.03); }
-        .r-tag { position: absolute; top: 15px; left: 15px; background: var(--red); color: white; font-size: 9px; padding: 4px 12px; letter-spacing: 3px; font-weight: bold; z-index: 10; }
+        .restricted-section { padding: 60px 20px; background: #000; border-top: 1px solid var(--faint); border-bottom: 1px solid var(--faint); display: flex; justify-content: center; }
+        .restricted-box { width: 100%; max-width: 800px; border: 1px solid var(--red); position: relative; overflow: hidden; background: #0a0a0a; }
+        .restricted-box img { width: 100%; display: block; filter: grayscale(100%); transition: 0.5s; }
+        .r-tag { position: absolute; top: 0; left: 0; background: var(--red); color: white; font-size: 9px; padding: 5px 12px; letter-spacing: 2px; font-weight: bold; z-index: 10; text-transform: uppercase; }
+        .r-status { font-size: 9px; color: var(--white); letter-spacing: 4px; padding: 15px; text-transform: uppercase; font-weight: bold; text-align: center; border-top: 1px solid var(--red); }
 
-        /* The Grid - Perfect Alignment */
-        .shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 60px 40px; max-width: 1400px; margin: 0 auto; }
-        .product-card { border: 1px solid var(--faint); padding: 25px; background: #080808; display: flex; flex-direction: column; text-align: center; align-items: center; }
-        
-        .img-container { width: 100%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: #000; margin-bottom: 25px; }
-        .product-card img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        
-        .product-title { font-family: var(--D); font-size: 24px; text-transform: uppercase; line-height: 1; margin-bottom: 10px; letter-spacing: 0.5px; }
-        .product-tag { font-size: 10px; color: var(--dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
-        .headline-badge { background: var(--red); color: white; font-size: 8px; padding: 4px 10px; display: inline-block; margin-bottom: 18px; font-family: var(--M); letter-spacing: 2px; font-weight: bold; }
+        .shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 40px 20px; max-width: 1300px; margin: 0 auto; }
+        .product-card { border: 1px solid var(--faint); padding: 20px; background: #080808; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .img-container { width: 100%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .img-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .headline-badge { background: var(--red); color: white; font-size: 8px; padding: 4px 10px; margin-bottom: 15px; letter-spacing: 2px; font-weight: bold; }
+        .product-title { font-family: var(--D); font-size: 22px; text-transform: uppercase; margin-bottom: 8px; }
+        .product-tag { font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+        .buy-btn { width: 100%; padding: 16px 0; background: var(--white); color: var(--black); text-decoration: none; font-family: var(--D); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-top: auto; font-weight: bold; border: 2px solid var(--white); box-shadow: 0 4px 0px var(--red); }
 
-        /* Centered CTA */
-        .buy-btn { 
-            display: flex; align-items: center; justify-content: center; width: 100%; padding: 18px 0; 
-            background: var(--white); color: var(--black); text-decoration: none; 
-            font-family: var(--D); font-size: 14px; letter-spacing: 2px; text-transform: uppercase; 
-            margin-top: auto; font-weight: bold; border: 2px solid var(--white);
-            box-shadow: 0 5px 0px var(--red); transition: 0.15s;
-        }
-        .buy-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0px var(--red); }
-        .buy-btn:active { transform: translateY(3px); box-shadow: 0 2px 0px var(--red); }
+        .foundation { padding: 100px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; border-top: 1px solid var(--faint); }
+        .fdn-body { max-width: 800px; font-family: var(--S); font-style: italic; font-size: clamp(22px, 5vw, 32px); line-height: 1.3; margin-bottom: 60px; }
+        .fdn-decree { max-width: 500px; border: 1px solid var(--faint); padding: 30px; text-align: center; }
+        .decree-ttl { font-weight: bold; letter-spacing: 4px; font-size: 10px; color: var(--white); margin-bottom: 15px; display: block; text-transform: uppercase; }
+        .decree-txt { font-size: 10px; color: var(--dim); letter-spacing: 2px; line-height: 2; text-transform: uppercase; }
 
-        /* Foundation */
-        .foundation { padding: 140px 40px; text-align: center; background: #000; border-top: 1px solid var(--faint); }
-        .fdn-body { max-width: 900px; margin: 0 auto 60px; font-family: var(--S); font-style: italic; font-size: clamp(26px, 5vw, 38px); line-height: 1.2; }
-        .fdn-protocol { font-size: 10px; color: var(--dim); letter-spacing: 4px; text-transform: uppercase; border: 1px solid var(--faint); padding: 40px; display: inline-block; line-height: 2.5; max-width: 600px; }
+        footer { padding: 120px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; border-top: 2px solid var(--white); background: #000; width: 100%; }
+        .f-monolith { font-family: var(--D); font-size: clamp(60px, 15vw, 180px); text-transform: uppercase; margin-bottom: 30px; letter-spacing: -4px; line-height: 0.8; width: 100%; }
+        .f-handle { font-size: 16px; letter-spacing: 6px; color: var(--white); margin-bottom: 60px; text-transform: uppercase; font-weight: bold; width: 100%; }
+        .f-copy { font-size: 9px; color: var(--dim); letter-spacing: 6px; text-transform: uppercase; opacity: 0.6; width: 100%; }
 
-        /* Monolith Footer */
-        footer { padding: 140px 20px; text-align: center; border-top: 2px solid var(--white); background: #000; }
-        .f-monolith { font-family: var(--D); font-size: clamp(65px, 16vw, 200px); text-transform: uppercase; margin-bottom: 40px; letter-spacing: -6px; line-height: 0.75; }
-        .f-handle { font-size: 16px; letter-spacing: 10px; color: var(--white); margin-bottom: 80px; text-transform: uppercase; font-weight: bold; }
-        .f-copy { font-size: 9px; color: var(--dim); letter-spacing: 10px; text-transform: uppercase; opacity: 0.5; }
-
-        @media (max-width: 1100px) { .shop-grid { grid-template-columns: repeat(2, 1fr); padding: 30px; } }
-        @media (max-width: 650px) { 
-            nav { padding: 15px 20px; }
-            .shop-grid { grid-template-columns: 1fr; padding: 20px; } 
-            .brand-ttl { font-size: 100px; }
-            .f-monolith { font-size: 70px; letter-spacing: -2px; }
+        @media (max-width: 1000px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { 
+            .shop-grid { grid-template-columns: 1fr; }
+            header { padding: 60px 10px; }
+            .f-monolith { font-size: 75px; letter-spacing: -2px; }
         }
     </style>
 </head>
@@ -91,9 +76,7 @@
         <div class="restricted-box">
             <div class="r-tag">PROJECT: GRIND // 02</div>
             <img src="./1000268197.png">
-            <div style="font-size: 9px; color: var(--white); letter-spacing: 6px; padding: 20px; text-transform: uppercase; font-weight: bold; background: #0a0a0a;">
-                STATUS: UNRELEASED // ACCESS GRANTED SUMMER '26
-            </div>
+            <div class="r-status">STATUS: UNRELEASED // ACCESS GRANTED SUMMER '26</div>
         </div>
     </section>
 
@@ -103,43 +86,14 @@
             <div class="img-container"><img src="./1000268734.png"></div>
             <span class="product-title">FAITH OVER FEAR</span>
             <span class="product-tag">Lightweight Edition</span>
-            <a href="https://chosencentury.etsy.com/listing/4487647129" class="buy-btn">Purchase on Etsy</a>
+            <a href="https://chosencentury.etsy.com/listing/4487647129" class="buy-btn">Etsy Store</a>
         </div>
         <div class="product-card">
-            <div class="headline-badge">THE STANDARD</div>
-            <div class="img-container"><img src="./1000268735.png"></div>
-            <span class="product-title">TRUST IN G-D</span>
-            <span class="product-tag">Lightweight Edition</span>
-            <a href="https://chosencentury.etsy.com/listing/4487644417" class="buy-btn">Purchase on Etsy</a>
-        </div>
-        <div class="product-card">
-            <div class="headline-badge">THE STANDARD</div>
-            <div class="img-container"><img src="./1000268863.png"></div>
-            <span class="product-title">FAITH OVER FEAR</span>
-            <span class="product-tag">Signature Edition</span>
-            <a href="https://chosencentury.etsy.com/listing/4479490168" class="buy-btn">Purchase on Etsy</a>
-        </div>
-        <div class="product-card">
-            <div class="headline-badge">THE STANDARD</div>
-            <div class="img-container"><img src="./1000269693.png"></div>
-            <span class="product-title">TRUST IN G-D</span>
-            <span class="product-tag">Signature Edition</span>
-            <a href="https://chosencentury.etsy.com/listing/4475813402" class="buy-btn">Purchase on Etsy</a>
-        </div>
-
-        <div class="product-card">
-            <div class="headline-badge">THE PROTOCOLS</div>
+            <div class="headline-badge">THE DIRECTIVES</div>
             <div class="img-container"><img src="./1000273250.png"></div>
             <span class="product-title">PUT THE WORK IN</span>
             <span class="product-tag">Signature Edition</span>
-            <a href="https://chosencentury.etsy.com/listing/4469981656" class="buy-btn">Purchase on Etsy</a>
-        </div>
-        <div class="product-card">
-            <div class="headline-badge">THE PROTOCOLS</div>
-            <div class="img-container"><img src="./1000268721.png"></div>
-            <span class="product-title">TRUST IN G-D TEE</span>
-            <span class="product-tag">Essential Signature</span>
-            <a href="https://chosencentury.etsy.com/listing/4470463365" class="buy-btn">Purchase on Etsy</a>
+            <a href="https://chosencentury.etsy.com/listing/4469981656" class="buy-btn">Etsy Store</a>
         </div>
 
         <div class="product-card">
@@ -147,30 +101,17 @@
             <div class="img-container"><img src="./1000268869.png"></div>
             <span class="product-title">LION GRAPHIC TEE</span>
             <span class="product-tag">Archive Graphic</span>
-            <a href="https://chosencentury.etsy.com/listing/4471098333" class="buy-btn">Purchase on Etsy</a>
-        </div>
-        <div class="product-card">
-            <div class="headline-badge">ICON ARCHIVE</div>
-            <div class="img-container"><img src="./1000269686.png"></div>
-            <span class="product-title">THE DIVINE COMPASS</span>
-            <span class="product-tag">Archive Graphic</span>
-            <a href="https://chosencentury.etsy.com/listing/4483767062" class="buy-btn">Purchase on Etsy</a>
-        </div>
-        <div class="product-card">
-            <div class="headline-badge">ICON ARCHIVE</div>
-            <div class="img-container"><img src="./1000273240.png"></div>
-            <span class="product-title">THE DIVINE ANCHOR</span>
-            <span class="product-tag">Archive Graphic</span>
-            <a href="https://chosencentury.etsy.com" class="buy-btn">Purchase on Etsy</a>
+            <a href="https://chosencentury.etsy.com/listing/4471098333" class="buy-btn">Etsy Store</a>
         </div>
     </div>
 
     <section class="foundation">
         <div class="fdn-body">
-            ChosenCentury is a streetwear label built on the grit of the grind and the truth of the foundation. We create apparel that reminds you and everyone behind you that G-D is there. It’s the uniform for the high-achiever who puts the work in and trusts the process.
+            ChosenCentury is a streetwear label built on the grit of the grind and the truth of the foundation. We create apparel that reminds you and everyone behind you that G-D is there.
         </div>
-        <div class="fdn-protocol">
-            PROTOCOL: We spell G-D out of respect for the sanctity of the Name. It is never treated as common. It is never treated with anything less than honor.
+        <div class="fdn-decree">
+            <span class="decree-ttl">THE DECREE</span>
+            <p class="decree-txt">We spell G-D out of respect for the sanctity of the Name. It is never treated as common. It is never treated with anything less than honor.</p>
         </div>
     </section>
 
