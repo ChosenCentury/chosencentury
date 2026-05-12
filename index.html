@@ -11,115 +11,111 @@
         }
         
         body { 
-            background: radial-gradient(circle at center, #0a0a0a 0%, #050505 100%); 
+            background: #050505; 
             color: var(--white); 
             font-family: var(--M); 
             margin: 0; 
+            padding: 0;
             overflow-x: hidden; 
         }
 
-        /* Navigation - Industrial Feel */
+        /* Navigation - Fixed to Corners on Mobile */
         nav { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            padding: 30px 40px; 
-            border-bottom: 2px solid var(--white); 
+            padding: 20px; 
+            border-bottom: 1px solid var(--faint); 
+            background: #050505;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .nav-brand { font-family: var(--S); font-style: italic; font-size: 28px; color: var(--white); text-decoration: none; font-weight: 700; }
-        .nav-links { display: flex; gap: 20px; }
+        .nav-brand { font-family: var(--S); font-style: italic; font-size: 20px; color: var(--white); text-decoration: none; font-weight: 700; }
+        .nav-links { display: flex; gap: 8px; }
         .nav-links a { 
             color: var(--white); 
             text-decoration: none; 
-            font-size: 11px; 
-            letter-spacing: 3px; 
+            font-size: 9px; 
+            letter-spacing: 1px; 
             text-transform: uppercase; 
-            border: 1px solid var(--dim); 
-            padding: 12px 24px; 
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            border: 1px solid var(--white); 
+            padding: 8px 12px; 
+            white-space: nowrap;
         }
-        .nav-links a:hover { background: var(--white); color: var(--black); border-color: var(--white); transform: translateY(-2px); }
 
-        /* Header - Maximum Impact */
-        header { padding: 60px 40px 20px; text-align: center; }
-        .brand-ttl { font-family: var(--D); font-size: clamp(80px, 18vw, 220px); letter-spacing: -6px; text-transform: uppercase; line-height: 0.8; margin: 0; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); }
-        .brand-sub { font-size: 12px; letter-spacing: 12px; color: var(--dim); text-transform: uppercase; margin: 25px 0; font-weight: 300; }
+        header { padding: 40px 20px 20px; text-align: center; }
+        .brand-ttl { font-family: var(--D); font-size: clamp(60px, 18vw, 200px); letter-spacing: -4px; text-transform: uppercase; line-height: 0.8; margin: 0; }
+        .brand-sub { font-size: 10px; letter-spacing: 6px; color: var(--dim); text-transform: uppercase; margin: 20px 0; }
 
-        /* Shop Grid - The Wall */
-        .shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 40px 40px 120px; }
+        /* Grid */
+        .shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; padding: 20px; }
+        
         .product-card { 
             border: 1px solid var(--faint); 
-            padding: 20px; 
-            background: rgba(255,255,255,0.02); 
+            padding: 12px; 
+            background: #0a0a0a; 
             display: flex; 
             flex-direction: column; 
-            min-height: 500px; 
-            transition: all 0.5s ease; 
+            min-height: 420px; 
         }
-        .product-card:hover { border-color: var(--white); background: rgba(255,255,255,0.05); transform: scale(1.02); }
         
         .product-card img { 
             width: 100%; 
             aspect-ratio: 1/1; 
             object-fit: contain; 
-            margin-bottom: 20px; 
+            margin-bottom: 15px; 
             background: #000; 
-            filter: grayscale(20%);
         }
         
-        .product-title { font-family: var(--D); font-size: 22px; text-transform: uppercase; line-height: 1; margin-bottom: 8px; letter-spacing: 1px; }
-        .product-tag { font-size: 10px; color: var(--dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
-        .headline-badge { background: var(--red); color: white; font-size: 9px; padding: 4px 10px; display: inline-block; margin-bottom: 12px; font-family: var(--M); letter-spacing: 1px; }
+        .product-title { font-family: var(--D); font-size: 18px; text-transform: uppercase; line-height: 1; margin-bottom: 5px; }
+        .product-tag { font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .headline-badge { background: var(--red); color: white; font-size: 8px; padding: 3px 8px; display: inline-block; margin-bottom: 10px; font-family: var(--M); }
 
+        /* POPPING BUTTONS */
         .buy-btn { 
             display: block; 
             width: 100%; 
-            padding: 16px; 
-            background: #222; 
-            color: var(--white); 
+            padding: 15px 0; 
+            background: var(--white); 
+            color: var(--black); 
             text-align: center; 
             text-decoration: none; 
             font-family: var(--D); 
             font-size: 13px; 
-            letter-spacing: 2px; 
+            letter-spacing: 1px; 
             text-transform: uppercase; 
             margin-top: auto; 
-            transition: 0.3s; 
-            border: 1px solid transparent;
+            font-weight: bold;
+            border: 2px solid var(--white);
+            box-shadow: 0 4px 0px rgba(184, 34, 34, 0.8); /* Red "pop" shadow */
+            transition: all 0.2s ease;
         }
-        .buy-btn:hover { background: var(--red); color: white; letter-spacing: 4px; }
+        .buy-btn:active { transform: translateY(2px); box-shadow: 0 2px 0px rgba(184, 34, 34, 0.8); }
 
-        /* The Foundation Section - High Contrast */
-        .foundation { padding: 150px 40px; text-align: center; border-top: 1px solid var(--faint); background: #000; position: relative; }
-        .fdn-label { color: var(--red); font-size: 12px; letter-spacing: 8px; font-weight: bold; text-transform: uppercase; margin-bottom: 50px; display: block; }
-        .fdn-body { max-width: 950px; margin: 0 auto 80px; font-family: var(--S); font-style: italic; font-size: clamp(24px, 5vw, 38px); line-height: 1.3; color: var(--white); letter-spacing: -0.5px; }
-        .fdn-protocol { 
-            font-size: 11px; 
-            color: var(--dim); 
-            letter-spacing: 4px; 
-            text-transform: uppercase; 
-            line-height: 2.2; 
-            border: 1px solid var(--faint); 
-            padding: 40px; 
-            display: inline-block; 
-            max-width: 700px; 
-        }
+        /* The Foundation Section */
+        .foundation { padding: 80px 20px; text-align: center; border-top: 1px solid var(--faint); background: #000; }
+        .fdn-label { color: var(--red); font-size: 11px; letter-spacing: 6px; font-weight: bold; text-transform: uppercase; margin-bottom: 30px; display: block; }
+        .fdn-body { max-width: 800px; margin: 0 auto 40px; font-family: var(--S); font-style: italic; font-size: 22px; line-height: 1.4; color: var(--white); }
+        .fdn-protocol { font-size: 10px; color: var(--dim); letter-spacing: 2px; text-transform: uppercase; line-height: 2; border: 1px solid var(--faint); padding: 25px; display: inline-block; }
 
-        /* Footer - Maximum Spacing */
-        footer { padding: 150px 20px; text-align: center; border-top: 2px solid var(--white); background: var(--black); }
-        .f-main { font-family: var(--D); font-size: clamp(50px, 12vw, 100px); text-transform: uppercase; margin-bottom: 40px; letter-spacing: 4px; line-height: 0.9; }
-        .f-secure { font-size: 11px; color: var(--dim); letter-spacing: 6px; text-transform: uppercase; margin-bottom: 80px; line-height: 2.5; }
-        .f-handle { font-size: 18px; letter-spacing: 5px; color: var(--white); margin-bottom: 100px; text-transform: uppercase; font-weight: bold; }
-        .f-copy { font-size: 11px; color: var(--dim); letter-spacing: 10px; text-transform: uppercase; line-height: 3; }
+        /* Footer */
+        footer { padding: 100px 20px; text-align: center; border-top: 1px solid var(--faint); background: var(--black); }
+        .f-main { font-family: var(--D); font-size: 60px; text-transform: uppercase; margin-bottom: 30px; letter-spacing: 2px; line-height: 0.9; }
+        .f-secure { font-size: 10px; color: var(--dim); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 60px; line-height: 2; }
+        .f-handle { font-size: 16px; letter-spacing: 4px; color: var(--white); margin-bottom: 80px; text-transform: uppercase; }
+        .f-copy { font-size: 9px; color: var(--dim); letter-spacing: 6px; text-transform: uppercase; line-height: 2.5; }
 
-        @media (max-width: 1100px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
+        /* Responsive Fixes */
+        @media (max-width: 1000px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
+        
         @media (max-width: 600px) { 
-            nav { flex-direction: column; gap: 20px; padding: 30px 20px; }
-            .nav-links { flex-direction: column; width: 100%; gap: 12px; }
-            .nav-links a { width: 100%; box-sizing: border-box; text-align: center; }
-            .shop-grid { grid-template-columns: 1fr; padding: 20px; } 
-            .brand-ttl { font-size: 90px; letter-spacing: -3px; }
-            .fdn-body { font-size: 22px; }
+            .shop-grid { grid-template-columns: 1fr; gap: 20px; padding: 15px; } 
+            .brand-ttl { font-size: 80px; }
+            nav { padding: 15px; }
+            .nav-brand { font-size: 18px; }
+            .nav-links a { padding: 6px 10px; font-size: 8px; }
+            .product-card { min-height: 480px; }
         }
     </style>
 </head>
@@ -128,7 +124,7 @@
     <nav>
         <a href="#" class="nav-brand">ChosenCentury</a>
         <div class="nav-links">
-            <a href="https://chosencentury.etsy.com" target="_blank">Access Store</a>
+            <a href="https://chosencentury.etsy.com" target="_blank">Etsy Shop</a>
             <a href="https://www.instagram.com/chosencentury18" target="_blank">Instagram</a>
         </div>
     </nav>
@@ -177,7 +173,7 @@
         <div class="product-card">
             <div class="headline-badge">ESSENTIAL</div>
             <img src="./1000268721.png">
-            <span class="product-title">TRUST IN G-D ESSENTIAL</span>
+            <span class="product-title">TRUST IN G-D TEE</span>
             <span class="product-tag">Signature Edition</span>
             <a href="https://chosencentury.etsy.com/listing/4470463365" class="buy-btn">Purchase on Etsy</a>
         </div>
@@ -223,3 +219,4 @@
 
 </body>
 </html>
+
