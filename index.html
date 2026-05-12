@@ -65,7 +65,27 @@ footer{padding:100px 40px; text-align:center; border-top:1px solid var(--faint);
 
 @media(max-width:1200px){ .shop-grid{ grid-template-columns: repeat(2, 1fr); } }
 @media(max-width:650px){ .shop-grid{ grid-template-columns: 1fr; } }
-</style>
+</style>@media (max-width: 600px) {
+    header {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        padding: 60px 20px !important;
+    }
+    nav {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    .nav-links {
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+    .nav-links a {
+        padding: 8px 12px !important;
+        font-size: 11px !important;
+    }
+}
+
 </head>
 <body>
 
