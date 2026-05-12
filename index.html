@@ -11,14 +11,14 @@
         }
         body { background: var(--black); color: var(--white); font-family: var(--M); margin: 0; overflow-x: hidden; }
 
-        /* Navigation - Fixed Stack for Mobile */
+        /* Navigation */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--faint); }
         .nav-brand { font-family: var(--S); font-style: italic; font-size: 24px; color: var(--white); text-decoration: none; }
         .nav-links { display: flex; gap: 15px; }
         .nav-links a { color: var(--white); text-decoration: none; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; border: 1px solid var(--white); padding: 10px 18px; transition: 0.3s; }
         .nav-links a:hover { background: var(--white); color: var(--black); }
 
-        /* Header - Minimal Gaps */
+        /* Header */
         header { padding: 15px 40px 5px; text-align: center; }
         .brand-ttl { font-family: var(--D); font-size: clamp(55px, 14vw, 160px); letter-spacing: -4px; text-transform: uppercase; line-height: 0.85; margin: 0; }
         .brand-sub { font-size: 10px; letter-spacing: 7px; color: var(--dim); text-transform: uppercase; margin: 10px 0 15px; }
@@ -30,7 +30,7 @@
         .collection-label { color: var(--red); font-size: 10px; letter-spacing: 4px; font-weight: bold; text-transform: uppercase; }
 
         /* Grid */
-        .shop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 0 40px 80px; margin-top: 15px; }
+        .shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 40px 80px; margin-top: 15px; }
         .product-card { border: 1px solid var(--faint); padding: 15px; background: #0a0a0a; display: flex; flex-direction: column; min-height: 440px; }
         .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: contain; margin-bottom: 15px; display: block; background: #000; }
         
@@ -40,19 +40,21 @@
 
         .buy-btn { display: block; width: 100%; padding: 12px; background: var(--white); color: var(--black); text-align: center; text-decoration: none; font-family: var(--D); font-size: 13px; text-transform: uppercase; margin-top: auto; }
 
-        footer { padding: 60px 40px; text-align: center; border-top: 1px solid var(--faint); }
-        .f-logo { font-family: var(--D); font-size: 35px; margin-bottom: 10px; }
+        /* Footer Style */
+        footer { padding: 120px 20px; text-align: center; border-top: 1px solid var(--faint); background: var(--black); width: 100%; box-sizing: border-box; }
+        .f-main { font-family: var(--D); font-size: clamp(45px, 10vw, 80px); text-transform: uppercase; margin-bottom: 30px; letter-spacing: 2px; color: var(--white); }
+        .f-secure { font-size: 10px; color: var(--dim); letter-spacing: 5px; text-transform: uppercase; margin-bottom: 60px; line-height: 2.2; }
+        .f-handle { font-size: 16px; letter-spacing: 4px; color: var(--white); margin-bottom: 80px; text-transform: uppercase; }
+        .f-copy { font-size: 10px; color: var(--dim); letter-spacing: 8px; text-transform: uppercase; line-height: 2.5; }
 
-        /* Mobile Breakpoint - Fixes Smushing */
+        /* Mobile Breakpoint */
         @media (max-width: 1100px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
-        
         @media (max-width: 600px) { 
             nav { flex-direction: column; gap: 15px; padding: 20px; text-align: center; }
             .nav-links { flex-direction: column; width: 100%; gap: 10px; }
             .nav-links a { display: block; width: 100%; box-sizing: border-box; }
             .shop-grid { grid-template-columns: 1fr; padding: 0 20px 80px; } 
             .brand-ttl { font-size: 70px; }
-            header { padding-top: 10px; }
         }
     </style>
 </head>
@@ -150,56 +152,12 @@
             <span class="product-tag">Signature Edition</span>
             <a href="https://chosencentury.etsy.com" class="buy-btn">Purchase</a>
         </div>
+    </div> <footer>
+        <div class="f-main">G-D IS THERE.</div>
+        <div class="f-secure">SECURE CHECKOUT VIA ETSY FLAGSHIP<br>STORE</div>
+        <div class="f-handle">@CHOSENCENTURY18</div>
+        <div class="f-copy">© 2026 CHOSENCENTURY<br>APPAREL</div>
+    </footer>
 
- <style>
-    footer { 
-        padding: 120px 20px; 
-        text-align: center; 
-        border-top: 1px solid rgba(236,233,225,0.07); 
-        background: #050505; 
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .f-main { 
-        font-family: 'Anton', sans-serif; 
-        font-size: clamp(45px, 10vw, 80px); 
-        text-transform: uppercase; 
-        margin-bottom: 30px; 
-        letter-spacing: 2px;
-        color: #ece9e1;
-    }
-    .f-secure { 
-        font-family: 'IBM Plex Mono', monospace;
-        font-size: 10px; 
-        color: rgba(236,233,225,0.4); 
-        letter-spacing: 5px; 
-        text-transform: uppercase; 
-        margin-bottom: 60px; 
-        line-height: 2.2; 
-    }
-    .f-handle { 
-        font-family: 'IBM Plex Mono', monospace;
-        font-size: 16px; 
-        letter-spacing: 4px; 
-        color: #ece9e1; 
-        margin-bottom: 80px; 
-        text-transform: uppercase; 
-    }
-    .f-copy { 
-        font-family: 'IBM Plex Mono', monospace;
-        font-size: 10px; 
-        color: rgba(236,233,225,0.4); 
-        letter-spacing: 8px; 
-        text-transform: uppercase; 
-        line-height: 2.5; 
-    }
-</style>
-
-<footer>
-    <div class="f-main">G-D IS THERE.</div>
-    <div class="f-secure">SECURE CHECKOUT VIA ETSY FLAGSHIP<br>STORE</div>
-    <div class="f-handle">@CHOSENCENTURY18</div>
-    <div class="f-copy">© 2026 CHOSENCENTURY<br>APPAREL</div>
-</footer>
-   
-    
+</body>
+</html>
