@@ -18,45 +18,42 @@
         .nav-links a:hover { background: var(--white); color: var(--black); }
 
         /* Brand Header */
-        header { padding: 40px 40px 20px; text-align: center; }
+        header { padding: 30px 40px 10px; text-align: center; }
         .brand-ttl { font-family: var(--D); font-size: clamp(60px, 15vw, 180px); letter-spacing: -4px; text-transform: uppercase; line-height: 0.9; }
-        .brand-sub { font-size: 12px; letter-spacing: 8px; color: var(--dim); text-transform: uppercase; margin-top: 10px; margin-bottom: 30px; }
+        .brand-sub { font-size: 12px; letter-spacing: 8px; color: var(--dim); text-transform: uppercase; margin-top: 10px; margin-bottom: 20px; }
 
         .mission-box { max-width: 750px; margin: 10px auto; border-top: 1px solid var(--faint); border-bottom: 1px solid var(--faint); padding: 15px 0; }
-        .mission-txt { font-family: var(--S); font-style: italic; font-size: 20px; line-height: 1.3; color: var(--white); margin: 0; text-align: center; }
+        .mission-txt { font-family: var(--S); font-style: italic; font-size: 19px; line-height: 1.3; color: var(--white); margin: 0; text-align: center; }
 
         /* Grid Styling */
-        .collection-header { padding: 30px 40px 10px; text-align: left; }
+        .collection-header { padding: 20px 40px 10px; text-align: left; }
         .collection-label { color: var(--red); font-size: 10px; letter-spacing: 4px; font-weight: bold; text-transform: uppercase; }
 
         .shop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 0 40px 100px; margin-top: 20px; }
-        .product-card { border: 1px solid var(--faint); padding: 20px; background: #0a0a0a; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; display: flex; flex-direction: column; }
-        .product-card:hover { border-color: var(--white); transform: translateY(-8px); background: #111; }
+        .product-card { border: 1px solid var(--faint); padding: 20px; background: #0a0a0a; transition: 0.3s; position: relative; display: flex; flex-direction: column; }
+        .product-card:hover { border-color: var(--white); background: #111; }
 
-        .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: contain; background: #050505; margin-bottom: 15px; }
+        /* IMAGE FIX: This ensures the images fill the space and load properly */
+        .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: contain; background: #050505; margin-bottom: 15px; display: block; }
+        
         .product-title { font-family: var(--D); font-size: 18px; text-transform: uppercase; display: block; line-height: 1.2; margin-bottom: 5px; }
         .product-tag { font-size: 10px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
-
-        .headline-badge { background: var(--red); color: white; font-size: 8px; padding: 2px 8px; display: inline-block; margin-bottom: 10px; font-family: var(--M); }
+        .headline-badge { background: var(--red); color: white; font-size: 8px; padding: 2px 8px; display: inline-block; margin-bottom: 10px; font-family: var(--M); width: fit-content; }
 
         .buy-btn { display: block; width: 100%; padding: 12px; background: var(--white); color: var(--black); text-align: center; text-decoration: none; font-family: var(--D); font-size: 13px; text-transform: uppercase; margin-top: auto; transition: 0.2s; }
         .buy-btn:hover { background: var(--red); color: var(--white); }
 
-        /* Footer */
-        footer { padding: 100px 40px; text-align: center; border-top: 1px solid var(--faint); background: #080808; }
+        footer { padding: 80px 40px; text-align: center; border-top: 1px solid var(--faint); background: #080808; }
         .f-logo { font-family: var(--D); font-size: 40px; margin-bottom: 10px; }
         .secure-badge { font-size: 9px; color: var(--dim); letter-spacing: 2px; margin-bottom: 30px; text-transform: uppercase; }
 
         /* Responsive Logic */
         @media (max-width: 1200px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 650px) { .shop-grid { grid-template-columns: 1fr; } }
-
         @media (max-width: 600px) {
-            nav { flex-direction: column !important; align-items: center !important; gap: 15px !important; padding: 20px !important; }
-            .nav-links { width: 100% !important; justify-content: center !important; gap: 10px !important; display: flex; margin-top: 10px; }
-            .nav-links a { margin: 0 5px !important; padding: 8px 12px !important; font-size: 11px !important; }
-            header { padding: 40px 20px 10px !important; }
-            .mission-txt { font-size: 18px !important; }
+            nav { flex-direction: column; padding: 20px; }
+            .nav-links { margin-top: 10px; }
+            header { padding: 30px 20px 10px; }
         }
     </style>
 </head>
@@ -73,11 +70,8 @@
     <header>
         <div class="brand-ttl">CHOSEN<br>CENTURY</div>
         <div class="brand-sub">UNIFORMS FOR THE FAITHFUL</div>
-
         <div class="mission-box">
-            <p class="mission-txt">
-                Streetwear built on the grit of the grind and the truth of the foundation.
-            </p>
+            <p class="mission-txt">Streetwear built on the grit of the grind and the truth of the foundation.</p>
         </div>
     </header>
 
@@ -87,4 +81,39 @@
 
     <div class="shop-grid">
         <div class="product-card">
-            <div class="headline-badge">NEW RELEASE
+            <div class="headline-badge">NEW RELEASE</div>
+            <img src="./1000268734.png">
+            <span class="product-title">FAITH OVER FEAR</span>
+            <span class="product-tag">Lightweight Edition</span>
+            <a href="https://chosencentury.etsy.com/listing/4487647129" class="buy-btn">Purchase on Etsy</a>
+        </div>
+
+        <div class="product-card">
+            <div class="headline-badge">NEW RELEASE</div>
+            <img src="./1000268735.png">
+            <span class="product-title">TRUST IN G-D</span>
+            <span class="product-tag">Lightweight Edition</span>
+            <a href="https://chosencentury.etsy.com/listing/4487644417" class="buy-btn">Purchase on Etsy</a>
+        </div>
+
+        <div class="product-card">
+            <div class="headline-badge">NEW RELEASE</div>
+            <img src="./1000268863.png">
+            <span class="product-title">FAITH OVER FEAR</span>
+            <span class="product-tag">Signature Edition</span>
+            <a href="https://chosencentury.etsy.com/listing/4479490168" class="buy-btn">Purchase on Etsy</a>
+        </div>
+
+        <div class="product-card">
+            <div class="headline-badge">NEW RELEASE</div>
+            <img src="./1000269693.png">
+            <span class="product-title">TRUST IN G-D</span>
+            <span class="product-tag">Signature Edition</span>
+            <a href="https://chosencentury.etsy.com/listing/4475813402" class="buy-btn">Purchase on Etsy</a>
+        </div>
+
+        <div class="product-card">
+            <div class="headline-badge">NEW RELEASE</div>
+            <img src="./1000273250.png">
+            <span class="product-title">PUT THE WORK IN</span>
+            <span class="product-tag">Signature Edition
