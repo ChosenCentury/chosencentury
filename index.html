@@ -11,46 +11,46 @@
         }
         body { background: var(--black); color: var(--white); font-family: var(--M); margin: 0; overflow-x: hidden; }
 
-        /* Navigation */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; border-bottom: 1px solid var(--faint); }
-        .nav-brand { font-family: var(--S); font-style: italic; font-size: 22px; color: var(--white); text-decoration: none; }
-        .nav-links a { color: var(--white); text-decoration: none; font-size: 10px; letter-spacing: 2px; margin-left: 20px; text-transform: uppercase; border: 1px solid var(--white); padding: 6px 12px; transition: 0.3s; }
+        /* Navigation - Fixed Smushing */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid var(--faint); }
+        .nav-brand { font-family: var(--S); font-style: italic; font-size: 24px; color: var(--white); text-decoration: none; }
+        .nav-links { display: flex; gap: 20px; } /* Added specific gap for buttons */
+        .nav-links a { color: var(--white); text-decoration: none; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; border: 1px solid var(--white); padding: 10px 18px; transition: 0.3s; white-space: nowrap; }
+        .nav-links a:hover { background: var(--white); color: var(--black); }
 
-        /* Brand Header - Tightened Spacing */
-        header { padding: 20px 40px 0px; text-align: center; }
-        .brand-ttl { font-family: var(--D); font-size: clamp(50px, 12vw, 150px); letter-spacing: -4px; text-transform: uppercase; line-height: 0.8; margin-bottom: 10px; }
-        .brand-sub { font-size: 10px; letter-spacing: 6px; color: var(--dim); text-transform: uppercase; margin-bottom: 15px; }
+        /* Header - Fixed Gap */
+        header { padding: 20px 40px 10px; text-align: center; }
+        .brand-ttl { font-family: var(--D); font-size: clamp(55px, 14vw, 160px); letter-spacing: -4px; text-transform: uppercase; line-height: 0.85; margin-bottom: 10px; }
+        .brand-sub { font-size: 10px; letter-spacing: 7px; color: var(--dim); text-transform: uppercase; margin-bottom: 20px; }
 
-        .mission-box { max-width: 700px; margin: 0 auto 15px; border-top: 1px solid var(--faint); border-bottom: 1px solid var(--faint); padding: 10px 0; }
-        .mission-txt { font-family: var(--S); font-style: italic; font-size: 18px; line-height: 1.2; color: var(--white); margin: 0; text-align: center; }
+        .mission-box { max-width: 720px; margin: 0 auto 20px; border-top: 1px solid var(--faint); border-bottom: 1px solid var(--faint); padding: 15px 0; }
+        .mission-txt { font-family: var(--S); font-style: italic; font-size: 19px; line-height: 1.3; color: var(--white); margin: 0; text-align: center; }
 
-        /* Collection Header */
-        .collection-header { padding: 10px 40px; text-align: left; }
+        /* Collection Section */
+        .collection-header { padding: 15px 40px 5px; text-align: left; }
         .collection-label { color: var(--red); font-size: 10px; letter-spacing: 4px; font-weight: bold; text-transform: uppercase; }
 
-        /* Product Grid */
-        .shop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 0 40px 80px; margin-top: 10px; }
-        .product-card { border: 1px solid var(--faint); padding: 15px; background: #0a0a0a; display: flex; flex-direction: column; min-height: 420px; transition: 0.3s; }
+        /* Grid Logic */
+        .shop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; padding: 0 40px 100px; margin-top: 20px; }
+        .product-card { border: 1px solid var(--faint); padding: 15px; background: #0a0a0a; display: flex; flex-direction: column; min-height: 440px; transition: 0.3s; }
         .product-card:hover { border-color: var(--white); background: #111; }
-        .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: contain; margin-bottom: 12px; display: block; background: #000; }
+        .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: contain; margin-bottom: 15px; display: block; background: #000; }
         
-        .product-title { font-family: var(--D); font-size: 16px; text-transform: uppercase; line-height: 1.1; margin-bottom: 4px; }
-        .product-tag { font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-        .headline-badge { background: var(--red); color: white; font-size: 8px; padding: 2px 6px; display: inline-block; margin-bottom: 8px; width: fit-content; font-family: var(--M); }
+        .product-title { font-family: var(--D); font-size: 17px; text-transform: uppercase; line-height: 1.1; margin-bottom: 5px; }
+        .product-tag { font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .headline-badge { background: var(--red); color: white; font-size: 8px; padding: 3px 8px; display: inline-block; margin-bottom: 10px; width: fit-content; font-family: var(--M); }
 
-        .buy-btn { display: block; width: 100%; padding: 10px; background: var(--white); color: var(--black); text-align: center; text-decoration: none; font-family: var(--D); font-size: 12px; text-transform: uppercase; margin-top: auto; }
-        .buy-btn:hover { background: var(--red); color: var(--white); }
+        .buy-btn { display: block; width: 100%; padding: 12px; background: var(--white); color: var(--black); text-align: center; text-decoration: none; font-family: var(--D); font-size: 13px; text-transform: uppercase; margin-top: auto; }
 
-        footer { padding: 60px 40px; text-align: center; border-top: 1px solid var(--faint); background: #080808; }
-        .f-logo { font-family: var(--D); font-size: 30px; margin-bottom: 5px; }
-        .f-sub { font-size: 9px; color: var(--dim); letter-spacing: 2px; text-transform: uppercase; }
+        footer { padding: 80px 40px; text-align: center; border-top: 1px solid var(--faint); }
+        .f-logo { font-family: var(--D); font-size: 35px; margin-bottom: 10px; }
 
-        /* Responsive Logic */
         @media (max-width: 1100px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 600px) { 
-            .shop-grid { grid-template-columns: 1fr; padding: 0 20px 60px; } 
-            header { padding: 20px 20px 5px; }
-            .brand-ttl { font-size: 60px; }
+            nav { flex-direction: column; gap: 15px; padding: 20px; }
+            .nav-links { gap: 10px; }
+            .shop-grid { grid-template-columns: 1fr; padding: 0 20px 80px; } 
+            .brand-ttl { font-size: 75px; }
         }
     </style>
 </head>
@@ -59,7 +59,7 @@
     <nav>
         <a href="#" class="nav-brand">ChosenCentury</a>
         <div class="nav-links">
-            <a href="https://chosencentury.etsy.com" target="_blank">Shop All</a>
+            <a href="https://chosencentury.etsy.com" target="_blank">Etsy Shop</a>
             <a href="https://www.instagram.com/chosencentury18" target="_blank">Instagram</a>
         </div>
     </nav>
@@ -97,7 +97,7 @@
             <div class="headline-badge">NEW RELEASE</div>
             <img src="./1000268863.png">
             <span class="product-title">FAITH OVER FEAR</span>
-            <span class="product-tag">Signature Edition</span>
+            <span class="product-tag">Signature Tee</span>
             <a href="https://chosencentury.etsy.com/listing/4479490168" class="buy-btn">Purchase</a>
         </div>
 
@@ -105,7 +105,7 @@
             <div class="headline-badge">NEW RELEASE</div>
             <img src="./1000269693.png">
             <span class="product-title">TRUST IN G-D</span>
-            <span class="product-tag">Signature Edition</span>
+            <span class="product-tag">Signature Tee</span>
             <a href="https://chosencentury.etsy.com/listing/4475813402" class="buy-btn">Purchase</a>
         </div>
 
@@ -113,7 +113,7 @@
             <div class="headline-badge">NEW RELEASE</div>
             <img src="./1000273250.png">
             <span class="product-title">PUT THE WORK IN</span>
-            <span class="product-tag">Signature Edition</span>
+            <span class="product-tag">Signature Tee</span>
             <a href="https://chosencentury.etsy.com/listing/4469981656" class="buy-btn">Purchase</a>
         </div>
 
@@ -121,7 +121,7 @@
             <div class="headline-badge">ESSENTIAL</div>
             <img src="./1000268721.png">
             <span class="product-title">TRUST IN G-D</span>
-            <span class="product-tag">Daily Wear</span>
+            <span class="product-tag">Daily Essential</span>
             <a href="https://chosencentury.etsy.com" class="buy-btn">Purchase</a>
         </div>
 
@@ -137,7 +137,7 @@
             <div class="headline-badge">COLLECTION</div>
             <img src="./1000269686.png">
             <span class="product-title">TRUST IN G-D</span>
-            <span class="product-tag">Essential Fit</span>
+            <span class="product-tag">Classic Fit</span>
             <a href="https://chosencentury.etsy.com" class="buy-btn">Purchase</a>
         </div>
 
@@ -145,14 +145,14 @@
             <div class="headline-badge">COLLECTION</div>
             <img src="./1000273240.png">
             <span class="product-title">PUT THE WORK IN</span>
-            <span class="product-tag">Classic Fit</span>
+            <span class="product-tag">Classic Edition</span>
             <a href="https://chosencentury.etsy.com" class="buy-btn">Purchase</a>
         </div>
 
         <div class="product-card">
-            <div class="headline-badge">NEW RELEASE</div>
-            <img src="./1000269693.png">
-            <span class="product-title">STAY CHOSEN</span>
+            <div class="headline-badge">LIMITED</div>
+            <img src="./1000273250.png">
+            <span class="product-title">WORK ETHIC</span>
             <span class="product-tag">Limited Edition</span>
             <a href="https://chosencentury.etsy.com" class="buy-btn">Purchase</a>
         </div>
@@ -161,7 +161,6 @@
     <footer>
         <div class="f-logo">G-D IS THERE.</div>
         <div class="f-sub">@CHOSENCENTURY18</div>
-        <div class="f-sub" style="margin-top: 15px; opacity: 0.3;">© 2026 CHOSENCENTURY APPAREL</div>
     </footer>
 
 </body>
