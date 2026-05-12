@@ -29,17 +29,35 @@
         .brand-ttl { font-family: var(--D); font-size: clamp(50px, 15vw, 180px); letter-spacing: -3px; text-transform: uppercase; line-height: 0.85; margin: 0; width: 100%; }
         .brand-sub { font-size: 9px; letter-spacing: 6px; color: var(--dim); text-transform: uppercase; margin-top: 30px; font-weight: bold; width: 100%; line-height: 1.8; }
 
-        /* Exclusive Drop - Clean Box (No Image Icon) */
-        .restricted-section { padding: 20px; display: flex; justify-content: center; width: 100%; }
-        .restricted-box { width: 100%; max-width: 600px; border: 1px solid var(--red); background: #0a0a0a; display: flex; flex-direction: column; min-height: 200px; justify-content: center; }
-        .r-header-bar { display: flex; border-bottom: 1px solid var(--red); width: 100%; position: absolute; top: 0; }
-        .restricted-box { position: relative; padding-top: 40px; } /* Space for the header bar */
-        .r-tag { background: var(--red); color: white; font-size: 9px; padding: 10px 15px; font-weight: bold; text-transform: uppercase; }
-        .r-drop-text { font-size: 9px; color: var(--white); padding: 10px 15px; letter-spacing: 2px; text-transform: uppercase; flex-grow: 1; text-align: right; }
-        .r-status { font-size: 11px; color: var(--white); letter-spacing: 4px; padding: 40px 20px; text-transform: uppercase; font-weight: bold; text-align: center; line-height: 2; }
+        /* Exclusive Drop - Clean Box */
+.restricted-section { 
+    padding: 0px 20px; 
+    display: flex; 
+    justify-content: center; 
+    margin-top: -60px; /* This pulls the box UP */
+}
 
-        /* Shop Grid */
-        .shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 40px 20px; max-width: 1200px; margin: 0 auto; width: 100%; }
+.restricted-box { 
+    width: 100%; 
+    max-width: 380px; /* This makes the box NARROWER */
+    border: 1px solid var(--white); 
+    position: relative; 
+    padding-top: 30px; 
+}
+
+.r-header-bar { 
+    display: flex; 
+    border-bottom: 1px solid var(--white); 
+    padding-bottom: 10px;
+}
+
+/* Shop Grid - Moving Products Up */
+.shop-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+    margin-top: -30px; /* This pulls products UP */
+}
         .product-card { border: 1px solid var(--faint); padding: 25px; background: #080808; display: flex; flex-direction: column; align-items: center; text-align: center; }
         .stock-tag { font-size: 8px; color: var(--dim); font-weight: bold; letter-spacing: 1px; margin-bottom: 15px; text-transform: uppercase; }
         .img-container { width: 100%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; background: #000; border: 1px solid var(--faint); }
