@@ -65,18 +65,15 @@ footer{padding:100px 40px; text-align:center; border-top:1px solid var(--faint);
 
 @media(max-width:1200px){ .shop-grid{ grid-template-columns: repeat(2, 1fr); } }
 @media(max-width:650px){ .shop-grid{ grid-template-columns: 1fr; } }
-</style>@media (max-width: 600px) {
-    header {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 20px !important;
-        padding: 60px 20px !important;
-    }
+@media (max-width: 600px) {
     nav {
         flex-direction: column !important;
+        align-items: center !important;
         gap: 15px !important;
+        padding: 15px !important;
     }
     .nav-links {
+        width: 100% !important;
         justify-content: center !important;
         gap: 10px !important;
     }
@@ -84,7 +81,11 @@ footer{padding:100px 40px; text-align:center; border-top:1px solid var(--faint);
         padding: 8px 12px !important;
         font-size: 11px !important;
     }
+    header {
+        padding: 60px 20px !important;
+    }
 }
+</style>
 
 </head>
 <body>
