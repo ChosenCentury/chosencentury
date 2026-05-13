@@ -1,3 +1,16 @@
+None selected 
+
+Skip to content
+Using Gmail with screen readers
+
+1 of 1,158
+(no subject)
+Inbox
+
+Sam Resnick <sjresnick07@gmail.com>
+2:16 PM (59 minutes ago)
+to me
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -888,20 +901,19 @@ footer {
   <!-- HORIZONTAL SCROLL STRIP -->
   <div class="lookbook-scroll reveal d2">
 
+    <div class="lbook-card">
+      <img src="1000274772.jpg" alt="Put The Work In — NYC Cobblestone" loading="lazy">
+      <div class="lbook-overlay">
+        <p>The Directives · SoHo</p>
+        <h4>Put The Work In</h4>
+      </div>
+    </div>
 
     <div class="lbook-card">
       <img src="1000274771.jpg" alt="Trust In G-D — Midnight SoHo" loading="lazy">
       <div class="lbook-overlay">
         <p>The Standard · SoHo Night</p>
         <h4>Trust In G-D</h4>
-      </div>
-    </div>
-   
-      <div class="lbook-card">
-      <img src="1000274772.jpg" alt="Put The Work In — NYC Cobblestone" loading="lazy">
-      <div class="lbook-overlay">
-        <p>The Directives · SoHo</p>
-        <h4>Put The Work In</h4>
       </div>
     </div>
 
@@ -1151,3 +1163,4 @@ function handleJoin(e) {
 </script>
 </body>
 </html>
+
