@@ -24,7 +24,8 @@
 /* ═══════════════════════════════════════════════════════
     RESET & ROOT
 ═══════════════════════════════════════════════════════ */
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
 html { font-size:16px; scroll-behavior: smooth; }
 
 body {
@@ -36,7 +37,6 @@ body {
   text-rendering: optimizeSpeed;
 }
 
-/* Snappier Scrolling */
 .lenis-smooth {
   scroll-behavior: auto !important;
 }
@@ -44,6 +44,8 @@ body {
 img { display:block; max-width:100%; }
 a { color:inherit; text-decoration:none; }
 button { background:none; border:none; cursor:pointer; color:inherit; font:inherit; }
+
+:root {
 
 :root {
   --black: #060606;
