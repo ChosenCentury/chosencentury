@@ -1,387 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChosenCentury | Uniforms for the Faithful</title>
+    <link rel="icon" type="image/jpeg" href="lion.jpg">
+    <style>
+        :root {
+            --black: #050505; --white: #ece9e1; --dim: rgba(236,233,225,0.4);
+            --faint: rgba(236,233,225,0.08); --red: #b82222; --D: 'Anton', sans-serif; --S: 'Cormorant Garamond', serif; --M: 'IBM Plex Mono', monospace;
+        }
+        
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-<title>ChosenCentury | Uniforms for the Faithful</title>
-<meta name="description" content="ChosenCentury — Streetwear built on the grit of the grind and the truth of the foundation. Uniforms for the Faithful.">
-<meta property="og:title" content="ChosenCentury | Uniforms for the Faithful">
-<meta property="og:description" content="Streetwear built on the grit of the grind and the truth of the foundation.">
-<meta property="og:image" content="1000274773.jpg">
-<meta property="og:url" content="https://chosencentury.com">
-<meta property="og:type" content="website">
+        body { background: #050505; color: var(--white); font-family: var(--M); margin: 0; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
-<link rel="icon" type="image/jpeg" href="lion.jpg">
-<link rel="apple-touch-icon" href="lion.jpg">
+        /* Nav - Centered & Responsive */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; border-bottom: 1px solid var(--faint); position: sticky; top: 0; background: rgba(5,5,5,0.95); backdrop-filter: blur(15px); z-index: 1000; width: 100%; }
+        .nav-brand { font-family: var(--S); font-style: italic; font-size: 22px; color: var(--white); text-decoration: none; font-weight: 700; }
+        .nav-links { display: flex; gap: 8px; }
+        .nav-links a { color: var(--white); text-decoration: none; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid var(--white); padding: 8px 12px; font-weight: bold; text-align: center; white-space: nowrap; }
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+        /* Countdown Bar */
+        .countdown-wrap { background: var(--red); color: white; padding: 12px; text-align: center; font-weight: bold; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; width: 100%; }
 
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+        /* Header */
+        header { width: 100%; padding: 60px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .brand-ttl { font-family: var(--D); font-size: clamp(50px, 15vw, 180px); letter-spacing: -3px; text-transform: uppercase; line-height: 0.85; margin: 0; width: 100%; }
+        .brand-sub { font-size: 9px; letter-spacing: 6px; color: var(--dim); text-transform: uppercase; margin-top: 30px; font-weight: bold; width: 100%; line-height: 1.8; }
 
-<style>
-/* ═══════════════════════════════════════════════════════
-   RESET & ROOT
-═══════════════════════════════════════════════════════ */
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { font-size:16px; }
-body {
-  background: linear-gradient(160deg, #080808 0%, #060606 40%, #07070a 100%);
-  color:#eeebe4;
-  font-family:'Barlow Condensed', sans-serif;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-img  { display:block; max-width:100%; }
-a    { color:inherit; text-decoration:none; }
-button { background:none; border:none; cursor:pointer; color:inherit; font:inherit; }
-
-:root {
-  --black:   #060606;
-  --deep:    #0a0a0a;
-  --surface: #111111;
-  --border:  rgba(255,255,255,.07);
-  --white:   #eeebe4;
-  --gray:    #555555;
-  --gold:    #c49a2e;
-  --px:      clamp(20px, 5vw, 64px);
-  --spy:     clamp(80px, 10vw, 130px);
+        /* Exclusive Drop - Clean Box */
+.restricted-section { 
+    padding: 0px 20px; 
+    display: flex; 
+    justify-content: center; 
+    margin-top: -60px; /* This pulls the box UP */
 }
 
-/* ═══════════════════════════════════════════════════════
-   GRAIN
-═══════════════════════════════════════════════════════ */
-body::after {
-  content:''; position:fixed; inset:0;
-  pointer-events:none; z-index:9000; opacity:.024;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:256px;
+.restricted-box { 
+    width: 100%; 
+    max-width: 380px; /* This makes the box NARROWER */
+    border: 1px solid var(--white); 
+    position: relative; 
+    padding-top: 30px; 
 }
 
-/* ═══════════════════════════════════════════════════════
-   CURSOR — desktop only
-═══════════════════════════════════════════════════════ */
-@media (hover:hover) and (pointer:fine) {
-  body { cursor:none; }
-  #cur, #ring {
-    position:fixed; border-radius:50%;
-    pointer-events:none; z-index:9999;
-    transform:translate(-50%,-50%);
-    mix-blend-mode:difference;
-  }
-  #cur {
-    width:8px; height:8px; background:var(--white);
-    transition:width .22s ease, height .22s ease;
-    z-index:9999; will-change:left, top;
-  }
-  #ring {
-    width:34px; height:34px;
-    border:1px solid rgba(255,255,255,.3);
-    mix-blend-mode:normal;
-    transition:width .26s ease, height .26s ease, border-color .26s ease;
-    z-index:9998; will-change:left, top;
-  }
-  body.hov #cur  { width:16px; height:16px; }
-  body.hov #ring { width:52px; height:52px; border-color:rgba(255,255,255,.55); }
-  body.clk #cur  { width:10px; height:10px; }
+.r-header-bar { 
+    display: flex; 
+    border-bottom: 1px solid var(--white); 
+    padding-bottom: 10px;
 }
 
-/* ═══════════════════════════════════════════════════════
-   UTILITIES
-═══════════════════════════════════════════════════════ */
-.px    { padding-left:var(--px); padding-right:var(--px); }
-.spy   { padding-top:var(--spy); padding-bottom:var(--spy); }
-
-.eyebrow {
-  font-size:9px; font-weight:500; letter-spacing:.48em;
-  text-transform:uppercase; color:rgba(255,255,255,.26);
-  display:flex; align-items:center; gap:14px;
+/* Shop Grid - Moving Products Up */
+.shop-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+    margin-top: -30px; /* This pulls products UP */
 }
-.eyebrow::before {
-  content:''; width:24px; height:1px; background:currentColor;
-  opacity:.5; flex-shrink:0;
-}
+        .product-card { border: 1px solid var(--faint); padding: 25px; background: #080808; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .stock-tag { font-size: 8px; color: var(--dim); font-weight: bold; letter-spacing: 1px; margin-bottom: 15px; text-transform: uppercase; }
+        .img-container { width: 100%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; background: #000; border: 1px solid var(--faint); }
+        .img-container img { max-width: 90%; max-height: 90%; object-fit: contain; }
+        .headline-badge { background: var(--red); color: white; font-size: 8px; padding: 5px 12px; margin-bottom: 18px; letter-spacing: 2px; font-weight: bold; text-transform: uppercase; }
+        .product-title { font-family: var(--D); font-size: 22px; text-transform: uppercase; margin-bottom: 10px; line-height: 1.1; }
+        .product-tag { font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
+        .buy-btn { width: 100%; padding: 18px 0; background: var(--white); color: var(--black); text-decoration: none; font-family: var(--D); font-size: 14px; letter-spacing: 1px; text-transform: uppercase; font-weight: bold; border: 2px solid var(--white); transition: 0.1s; display: block; }
+        .buy-btn:active { transform: scale(0.98); }
 
-.section-title {
-  font-family:'Bebas Neue', sans-serif;
-  font-size:clamp(44px,8vw,88px);
-  letter-spacing:.06em; line-height:.9;
-}
+        /* Foundation */
+        .foundation { padding: 100px 20px; text-align: center; border-top: 1px solid var(--faint); }
+        .fdn-body { max-width: 700px; font-family: var(--S); font-style: italic; font-size: 26px; line-height: 1.4; margin: 0 auto 60px; }
+        .fdn-decree { width: 100%; max-width: 500px; border: 1px solid var(--faint); padding: 40px 25px; margin: 0 auto; background: #080808; }
+        .decree-ttl { font-weight: bold; letter-spacing: 4px; font-size: 11px; display: block; margin-bottom: 15px; }
+        .decree-txt { font-size: 10px; color: var(--dim); letter-spacing: 1px; line-height: 2; margin: 0; text-transform: uppercase; }
 
-.reveal { opacity:0; transform:translateY(22px); transition:opacity .75s ease, transform .75s ease; }
-.reveal.in { opacity:1; transform:none; }
-.d1{transition-delay:.07s} .d2{transition-delay:.14s}
-.d3{transition-delay:.21s} .d4{transition-delay:.28s}
-.d5{transition-delay:.35s} .d6{transition-delay:.42s}
+        /* Footer */
+        footer { padding: 120px 20px; text-align: center; border-top: 1px solid var(--faint); background: #000; }
+        .f-monolith { font-family: var(--D); font-size: clamp(45px, 12vw, 130px); text-transform: uppercase; margin-bottom: 25px; line-height: 1; }
+        .f-subtext { font-size: 10px; letter-spacing: 4px; color: var(--dim); text-transform: uppercase; margin-bottom: 50px; font-weight: bold; }
+        .f-handle { font-size: 16px; letter-spacing: 8px; color: var(--white); margin-bottom: 60px; display: block; text-decoration: none; font-weight: bold; }
+        .f-copy { font-size: 9px; color: var(--dim); letter-spacing: 5px; text-transform: uppercase; opacity: 0.5; }
 
-.btn {
-  display:inline-flex; align-items:center; justify-content:center;
-  font-size:10px; font-weight:700; letter-spacing:.32em; text-transform:uppercase;
-  padding:13px 30px; transition:background .2s, color .2s, border-color .2s;
-  white-space:nowrap; will-change:transform;
-}
-.btn:active { transform:scale(.97) !important; }
-.btn-solid   { background:var(--white); color:var(--black); }
-.btn-solid:hover  { background:var(--gold); }
-.btn-outline { border:1px solid rgba(255,255,255,.2); color:rgba(255,255,255,.5); }
-.btn-outline:hover { border-color:rgba(255,255,255,.5); color:var(--white); }
-
-.badge-available {
-  display:inline-block;
-  font-size:7px; font-weight:600; letter-spacing:.3em; text-transform:uppercase;
-  padding:3px 9px;
-  background:rgba(255,255,255,.06);
-  color:rgba(255,255,255,.4);
-}
-.badge-soldout {
-  display:inline-block;
-  font-size:7px; font-weight:600; letter-spacing:.3em; text-transform:uppercase;
-  padding:3px 9px;
-  background:rgba(196,154,46,.12);
-  color:var(--gold);
+        @media (max-width: 900px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { 
+            .shop-grid { grid-template-columns: 1fr; }
+            .nav-brand { font-size: 20px; }
+            .nav-links a { font-size: 8px; padding: 6px 10px; }
+        }
+        .buy-btn {
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-/* ═══════════════════════════════════════════════════════
-   NAV
-═══════════════════════════════════════════════════════ */
-nav {
-  position:fixed; top:0; left:0; right:0; z-index:800;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:22px var(--px);
-  border-bottom:1px solid transparent;
-  transition:background .35s, padding .35s, border-color .35s;
+.buy-btn:hover {
+    background-color: var(--white) !important;
+    color: var(--black) !important;
+    box-shadow: 0 0 15px rgba(236, 233, 225, 0.4);
+    transform: translateY(-2px);
 }
-nav.stuck {
-  background:rgba(6,6,6,.95);
-  backdrop-filter:blur(16px);
-  padding-top:14px; padding-bottom:14px;
-  border-bottom-color:var(--border);
-}
-.nav-logo { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:.18em; }
-.nav-right { display:flex; align-items:center; gap:28px; }
-.nav-link {
-  font-size:10px; font-weight:500; letter-spacing:.28em; text-transform:uppercase;
-  color:rgba(255,255,255,.38); transition:color .2s;
-}
-.nav-link:hover { color:var(--white); }
-@media (max-width:600px) { .nav-hide { display:none; } }
-.nav-btn {
-  font-size:9px; font-weight:700; letter-spacing:.28em; text-transform:uppercase;
-  color:var(--black); background:var(--white); padding:9px 18px;
-  transition:background .2s; will-change:transform;
-}
-.nav-btn:hover { background:var(--gold); }
-
-/* ═══════════════════════════════════════════════════════
-   HERO
-═══════════════════════════════════════════════════════ */
-.hero {
-  position:relative; min-height:100svh;
-  display:flex; align-items:center; justify-content:center;
-  overflow:hidden; text-align:center;
-}
-.hero-bg {
-  position:absolute; inset:0;
-  background: linear-gradient(180deg, #07070e 0%, #0d0d17 40%, #07070c 100%);
-}
-.hero-video {
-  position:absolute; inset:0;
-  width:100%; height:100%; object-fit:cover;
-  opacity:.25; filter:grayscale(1) brightness(.45);
-  pointer-events:none;
-}
-.hero-body { position:relative; z-index:2; padding:0 var(--px); padding-top:110px; }
-.hero-h1 {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(76px,18vw,210px);
-  line-height:.87; letter-spacing:.06em;
-  opacity:0; animation:up .9s .5s forwards;
-}
-.hero-h1 .ghost {
-  display:block; color:transparent;
-  -webkit-text-stroke:1px rgba(255,255,255,.08);
-}
-.hero-sub {
-  font-family:'EB Garamond',serif; font-style:italic;
-  font-size:clamp(15px,2.5vw,21px); letter-spacing:.1em;
-  color:rgba(255,255,255,.30); margin-top:20px;
-  opacity:0; animation:up .9s .7s forwards;
-}
-
-/* ═══════════════════════════════════════════════════════
-   PRODUCTS (NO SQUISHING)
-═══════════════════════════════════════════════════════ */
-.pgrid {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:clamp(8px,1.8vw,14px);
-}
-@media (min-width:880px) { .pgrid { grid-template-columns:repeat(3,1fr); } }
-
-.pcard-img {
-  position:relative;
-  aspect-ratio: 3/4; 
-  overflow:hidden;
-  background:#0c0c0c;
-  flex-shrink:0;
-}
-.pcard-img img {
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit:cover; /* CRITICAL FIX */
-  object-position:center top;
-  filter:brightness(.86);
-  transition:transform .7s cubic-bezier(.25,.46,.45,.94), filter .35s;
-}
-.pcard:hover .pcard-img img { transform:scale(1.06); filter:brightness(1); }
-
-.pcard-info { padding:14px 16px 18px; border-top:1px solid var(--border); }
-.pi-name { font-family:'Bebas Neue',sans-serif; font-size:clamp(18px,3vw,22px); letter-spacing:.1em; line-height:1.1; }
-.pi-ed   { font-size:8px; letter-spacing:.2em; color:rgba(255,255,255,.27); text-transform:uppercase; margin-top:2px; }
-
-/* ═══════════════════════════════════════════════════════
-   LOOKBOOK (STREET PHOTOGRAPHY)
-═══════════════════════════════════════════════════════ */
-.lbook-hero {
-  position:relative; width:100%; overflow:hidden;
-  aspect-ratio:21/9; margin-bottom:12px;
-  background:var(--surface);
-}
-.lbook-hero img { width:100%; height:100%; object-fit:cover; filter:brightness(.82); transition: 0.8s; }
-.lbook-hero:hover img { transform:scale(1.03); filter:brightness(.95); }
-
-.lookbook-scroll {
-  display:flex; gap:12px;
-  overflow-x:auto; scroll-snap-type:x mandatory;
-  scrollbar-width:none;
-}
-.lbook-card {
-  flex-shrink:0; scroll-snap-align:start;
-  width:320px; aspect-ratio:2/3;
-  position:relative; overflow:hidden;
-  background:var(--surface);
-}
-.lbook-card img { width:100%; height:100%; object-fit:cover; filter:brightness(.8); transition: 0.65s; }
-
-/* ═══════════════════════════════════════════════════════
-   REMAINING ORIGINAL LAYOUTS
-═══════════════════════════════════════════════════════ */
-.decree { position:relative; overflow:hidden; background:var(--deep); border-top:1px solid var(--border); }
-.decree-ghost {
-  position:absolute; right:-40px; top:50%; transform:translateY(-50%);
-  font-family:'Bebas Neue',sans-serif; font-size:clamp(140px,22vw,340px);
-  color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.033);
-}
-.decree-h { font-family:'Bebas Neue',sans-serif; font-size:clamp(54px,10vw,110px); letter-spacing:.06em; line-height:.87; margin-bottom:34px; }
-
-@keyframes up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
-</style>
+    </style>
 </head>
 <body>
 
-<div id="cur"></div>
-<div id="ring"></div>
+    <nav>
+        <a href="#" class="nav-brand">ChosenCentury</a>
+        <div class="nav-links">
+            <a href="https://chosencentury.etsy.com" target="_blank">SHOP ALL</a>
+            <a href="https://www.instagram.com/chosencentury18" target="_blank">INSTAGRAM</a>
+        </div>
+    </nav>
 
-<nav id="nav">
-  <a href="#" class="nav-logo">ChosenCentury</a>
-  <div class="nav-right">
-    <a href="#products" class="nav-link nav-hide">Shop</a>
-    <a href="#decree"   class="nav-link nav-hide">Decree</a>
-    <a href="https://chosencentury.etsy.com" target="_blank" class="nav-btn mag">Shop Now</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="hero-bg"></div>
-  <video class="hero-video" src="lv_0_20260512184304.mp4" autoplay muted loop playsinline></video>
-  <div class="hero-body">
-    <p class="hero-eyebrow" style="color:rgba(255,255,255,.2); font-size:9px; letter-spacing:0.5em; text-transform:uppercase; margin-bottom:20px;">SS 2026</p>
-    <h1 class="hero-h1">CHOSEN<span class="ghost">CENTURY</span></h1>
-    <p class="hero-sub">Uniforms for the Faithful</p>
-    <div style="margin-top:40px;">
-        <a href="#products" class="btn btn-solid mag">Shop Collection</a>
+    <div class="countdown-wrap">
+        EXCLUSIVE SUMMER DROP IN: <span id="timer">00D:00H:00M:00S</span>
     </div>
-  </div>
-</section>
 
-<section class="products-section spy px" id="products">
-  <div class="products-head reveal">
-    <h2 class="section-title">The Standard</h2>
-  </div>
+    <header>
+        <h1 class="brand-ttl">CHOSEN<br>CENTURY</h1>
+        <div class="brand-sub">UNIFORMS FOR THE FAITHFUL</div>
+    </header>
 
-  <div class="pgrid" id="pgrid">
-    <div class="pcard reveal d1">
-      <div class="pcard-img">
-        <img src="1000274773.jpg" alt="Signature Tee">
-      </div>
-      <div class="pcard-info">
-        <p class="pi-name">Signature Wordmark</p>
-        <p class="pi-ed">Heavyweight Edition</p>
-      </div>
+   
+
+    <div class="shop-grid">
+        <div class="product-card">
+            <div class="stock-tag">STOCK LEVEL: STABLE</div>
+            <div class="headline-badge">The Standard</div>
+            <div class="img-container"><img src="./1000268734.png"></div>
+            <span class="product-title">FAITH OVER FEAR</span>
+            <span class="product-tag">Lightweight Edition</span>
+            <a href="https://chosencentury.etsy.com/listing/4487647129" class="buy-btn">PURCHASE ON ETSY</a>
+        </div>
+        <div class="product-card">
+            <div class="stock-tag">STOCK LEVEL: STABLE</div>
+            <div class="headline-badge">The Standard</div>
+            <div class="img-container"><img src="./1000268735.png"></div>
+            <span class="product-title">TRUST IN G-D</span>
+            <span class="product-tag">Lightweight Edition</span>
+            <a href="https://chosencentury.etsy.com/listing/4487644417" class="buy-btn">PURCHASE ON ETSY</a>
+        </div>
+        <div class="product-card">
+            <div class="stock-tag">STOCK LEVEL: STABLE</div>
+            <div class="headline-badge">The Standard</div>
+            <div class="img-container"><img src="./1000268863.png"></div>
+            <span class="product-title">FAITH OVER FEAR</span>
+            <span class="product-tag">Signature Edition</span>
+            <a href="https://chosencentury.etsy.com/listing/4479490168" class="buy-btn">PURCHASE ON ETSY</a>
+        </div>
+        <div class="product-card">
+            <div class="stock-tag">STOCK LEVEL: STABLE</div>
+            <div class="headline-badge">The Standard</div>
+            <div class="img-container"><img src="./1000269693.png"></div>
+            <span class="product-title">TRUST IN G-D</span>
+            <span class="product-tag">Signature Edition</span>
+            <a href="https://chosencentury.etsy.com/listing/4475813402" class="buy-btn">PURCHASE ON ETSY</a>
+        </div>
+        <div class="product-card">
+            <div class="stock-tag">STOCK LEVEL: STABLE</div>
+            <div class="headline-badge">The Directives</div>
+            <div class="img-container"><img src="./1000273250.png"></div>
+            <span class="product-title">PUT THE WORK IN</span>
+            <span class="product-tag">Signature Edition</span>
+            <a href="https://chosencentury.etsy.com/listing/4469981656" class="buy-btn">PURCHASE ON ETSY</a>
+        </div>
+        <div class="product-card">
+            <div class="stock-tag">STOCK LEVEL: STABLE</div>
+            <div class="headline-badge">The Directives</div>
+            <div class="img-container"><img src="./1000268721.png"></div>
+            <span class="product-title">TRUST IN G-D ESSENTIAL</span>
+            <span class="product-tag">Signature Edition</span>
+            <a href="https://chosencentury.etsy.com/listing/4470463365" class="buy-btn">PURCHASE ON ETSY</a>
+        </div>
+        <div class="product-card">
+            <div class="stock-tag">STOCK LEVEL: STABLE</div>
+            <div class="headline-badge">Icon Archive</div>
+            <div class="img-container"><img src="./1000268869.png"></div>
+            <span class="product-title">LION GRAPHIC TEE</span>
+            <span class="product-tag">Archive Graphic</span>
+            <a href="https://chosencentury.etsy.com/listing/4471098333" class="buy-btn">PURCHASE ON ETSY</a>
+        </div>
+        <div class="product-card">
+            <div class="stock-tag">STOCK LEVEL: STABLE</div>
+            <div class="headline-badge">Icon Archive</div>
+            <div class="img-container"><img src="./1000269686.png"></div>
+            <span class="product-title">THE DIVINE COMPASS</span>
+            <span class="product-tag">Archive Graphic</span>
+            <a href="https://chosencentury.etsy.com/listing/4483767062" class="buy-btn">PURCHASE ON ETSY</a>
+        </div>
+        <div class="product-card">
+            <div class="stock-tag">STOCK LEVEL: STABLE</div>
+            <div class="headline-badge">Icon Archive</div>
+            <div class="img-container"><img src="./1000273240.png"></div>
+            <span class="product-title">THE DIVINE ANCHOR</span>
+            <span class="product-tag">Archive Graphic</span>
+            <a href="https://chosencentury.etsy.com/listing/4483580350" class="buy-btn">PURCHASE ON ETSY</a>
+        </div>
     </div>
-    <div class="pcard reveal d2">
-      <div class="pcard-img">
-        <img src="1000274781.jpg" alt="Lion Graphic">
-      </div>
-      <div class="pcard-info">
-        <p class="pi-name">The Lion Graphic</p>
-        <p class="pi-ed">Archive Edition</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="lookbook spy px" id="lookbook">
-  <div class="lookbook-head reveal">
-    <h2 class="section-title">In The Streets</h2>
-  </div>
-  
-  <div class="lbook-hero reveal d1">
-    <img src="1000274771.jpg" alt="Street Look">
-  </div>
+    <section class="foundation">
+        <div class="fdn-body">
+            ChosenCentury is a streetwear label built on the grit of the grind and the truth of the foundation. We create apparel that reminds you and everyone behind you that G-D is there.
+        </div>
+        <div class="fdn-decree">
+            <span class="decree-ttl">THE DECREE</span>
+            <p class="decree-txt">We spell G-D out of respect for the sanctity of the Name. It is never treated as common. It is never treated with anything less than honor.</p>
+        </div>
+    </section>
 
-  <div class="lookbook-scroll reveal d2">
-    <div class="lbook-card"><img src="1000274772.jpg"></div>
-    <div class="lbook-card"><img src="1000274766.jpg"></div>
-    <div class="lbook-card"><img src="1000274774.jpg"></div>
-    <div class="lbook-card"><img src="1000274768.jpg"></div>
-  </div>
-</section>
+    <footer>
+        <div class="f-monolith">G-D IS THERE.</div>
+        <div class="f-subtext">SECURE CHECKOUT VIA ETSY FLAGSHIP STORE</div>
+        <a href="https://www.instagram.com/chosencentury18" target="_blank" class="f-handle">@CHOSENCENTURY18</a>
+        <div class="f-copy">© 2026 CHOSENCENTURY APPAREL // ALL RIGHTS RESERVED</div>
+    </footer>
 
-<section class="decree spy px" id="decree">
-  <div class="decree-ghost">G-D</div>
-  <div class="decree-inner">
-    <h2 class="decree-h reveal">THE NAME IS SACRED</h2>
-    <p style="font-family:'EB Garamond', serif; font-style:italic; font-size:24px; color:rgba(255,255,255,0.5); max-width:600px;">
-        We spell G-D out of respect for the sanctity of the Name. It is never treated as common.
-    </p>
-  </div>
-</section>
-
-<footer class="spy px" style="background:#000; text-align:center;">
-    <p style="font-family:'Bebas Neue'; font-size:24px; letter-spacing:0.2em;">CHOSENCENTURY</p>
-    <p style="font-size:10px; opacity:0.3; margin-top:20px;">© 2026 ALL RIGHTS RESERVED</p>
-</footer>
-
-<script>
-const lenis = new Lenis({ duration: 1.2, smooth: true });
-function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-requestAnimationFrame(raf);
-
-/* Custom Cursor Logic */
-const cur = document.getElementById('cur');
-const ring = document.getElementById('ring');
-document.addEventListener('mousemove', e => {
-    cur.style.left = e.clientX + 'px'; cur.style.top = e.clientY + 'px';
-    ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px';
-});
-
-/* Reveal Observer */
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
-
+    <script>
+        const targetDate = new Date("June 20, 2026 00:00:00").getTime();
+        function updateTimer() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+            document.getElementById("timer").innerHTML = 
+                `${days}D:${hours}H:${mins}M:${secs}S`;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
 </body>
 </html>
