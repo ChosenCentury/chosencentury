@@ -58,9 +58,12 @@ button { background:none; border:none; cursor:pointer; color:inherit; font:inher
 ═══════════════════════════════════════════════════════ */
 body::after {
   content:''; position:fixed; inset:0;
-  pointer-events:none; z-index:10; opacity:.024;
+  pointer-events:none; z-index:10; opacity:.020;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size:256px;
+  /* Speed optimization */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -114,11 +117,16 @@ body::after {
 }
 
 /* reveal */
-.reveal { opacity:0; transform:translateY(22px); transition:opacity .75s ease, transform .75s ease; }
+.reveal { 
+  opacity:0; 
+  transform:translateY(15px); 
+  transition: opacity .6s ease-out, transform .6s ease-out; 
+  will-change: opacity, transform; 
+}
 .reveal.in { opacity:1; transform:none; }
-.d1{transition-delay:.07s} .d2{transition-delay:.14s}
-.d3{transition-delay:.21s} .d4{transition-delay:.28s}
-.d5{transition-delay:.35s} .d6{transition-delay:.42s}
+.d1{transition-delay:.05s} .d2{transition-delay:.1s}
+.d3{transition-delay:.15s} .d4{transition-delay:.2s}
+.d5{transition-delay:.25s} .d6{transition-delay:.3s}
 
 /* buttons */
 .btn {
@@ -1028,10 +1036,10 @@ footer {
 <script>
 /* ── Lenis smooth scroll ── */
 const lenis = new Lenis({
-  duration: 1.1,
+  duration: 0.9,
   easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smooth: true,
-  smoothTouch: false,
+  wheelMultiplier: 1.1,
+  smoothWheel: true
 });
 function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
