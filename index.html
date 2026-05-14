@@ -301,7 +301,11 @@ nav.stuck {
 .cd-num { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:.06em; line-height:1; }
 .cd-lbl { font-size:7px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.28); margin-top:1px; }
 .cd-sep { font-family:'Bebas Neue',sans-serif; font-size:20px; color:rgba(255,255,255,.18); align-self:center; padding-bottom:6px; }
-@media (max-width:520px) { .countdown { display:none; } }
+@media (max-width:520px) { 
+  .cd-num { font-size: 18px; }
+  .cd-unit { min-width: 28px; }
+  .countdown { gap: 6px; }
+}
 
 /* ═══════════════════════════════════════════════════════
    PRODUCTS
