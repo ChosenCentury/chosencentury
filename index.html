@@ -975,7 +975,7 @@ footer {
   <h2 class="init-h reveal d1">Request<br>Access</h2>
   <p class="init-sub reveal d2">Join the Century. First access to drops, archived pieces & the movement.</p>
   <form class="init-form reveal d3" onsubmit="handleJoin(event)">
-    <input class="init-input" type="email" placeholder="YOUR EMAIL ADDRESS" required>
+    <input class="init-input" name="email" type="email" placeholder="YOUR EMAIL ADDRESS" required>
     <button class="init-btn mag" type="submit">Join</button>
   </form>
   <p class="init-note reveal d4" id="join-note">No spam. Ever. Only what matters.</p>
@@ -1146,12 +1146,35 @@ function filterCat(cat, btn) {
 })();
 
 /* ── Newsletter join ── */
-function handleJoin(e) {
+/* ── Newsletter join ── */
+async function handleJoin(e) {
   e.preventDefault();
   const note = document.getElementById('join-note');
-  note.textContent = "You're in. Welcome to the Century.";
-  note.style.color = 'var(--gold)';
-  e.target.reset();
+  const btn = e.target.querySelector('.init-btn');
+  
+  // Show the user that the request is processing
+  btn.innerText = "SENDING...";
+  
+  // Your unique Google Web App URL
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyJxF5UaDo65Jq_nW_LGouAZoI8j_wpFlq9kZlsiNaKC86ROPANFbh8tNLqCh8NyRB7uA/exec';
+
+  try {
+    await fetch(scriptURL, { 
+      method: 'POST', 
+      mode: 'no-cors', 
+      body: new FormData(e.target) 
+    });
+    
+    // Success message for the "Century" members
+    note.textContent = "You're in. Welcome to the Century.";
+    note.style.color = 'var(--gold)';
+    e.target.reset();
+  } catch (error) {
+    note.textContent = "Something went wrong. Please try again.";
+    note.style.color = 'red';
+  } finally {
+    btn.innerText = "JOIN";
+  }
 }
 </script>
 </body>
