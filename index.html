@@ -237,9 +237,18 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .lookbook-scroll { display:flex; gap:clamp(8px,1.5vw,12px); overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:4px; scroll-snap-type:x mandatory; }
 .lookbook-scroll::-webkit-scrollbar { display:none; }
 .lbook-card { flex-shrink:0; scroll-snap-align:start; width:clamp(200px,42vw,320px); position:relative; overflow:hidden; background:var(--surface); aspect-ratio:2/3; }
-.lbook-card img { width:100%; height:100%; object-fit:cover; object-position:center top; filter:brightness(.8) grayscale(.15); transition:transform .65s cubic-bezier(.25,.46,.45,.94), filter .35s; }
+
+/* THE FIT REPAIR WORK DONE HERE */
+.lbook-card img { 
+  width:100% !important; 
+  height:100% !important; 
+  object-fit:cover !important; 
+  object-position:center top !important; 
+  filter:brightness(.8) grayscale(.15); 
+  transition:transform .65s cubic-bezier(.25,.46,.45,.94), filter .35s; 
+}
 .lbook-card:hover img { transform:scale(1.04); filter:brightness(.95) grayscale(0); }
-.lbook-overlay { position:absolute; bottom:0; left:0; right:0; padding:20px 16px; background:linear-gradient(0deg, rgba(0,0,0,.9) 0%, transparent 100%); }
+.lbook-overlay { position:absolute; bottom:0; left:0; right:0; padding:20px 16px; background:linear-gradient(0deg, rgba(0,0,0,.9) 0%, transparent 100%); z-index: 5; }
 .lbook-overlay p { font-size:9px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.4); }
 .lbook-overlay h4 { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:.08em; margin-top:2px; }
 
@@ -316,7 +325,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 <div id="cur"></div>
 <div id="ring"></div>
 
-<!-- ═══ NAV ══════════════════════════════════════════ -->
 <nav id="nav">
   <a href="#" class="nav-logo">ChosenCentury</a>
   <div class="nav-right">
@@ -328,7 +336,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   </div>
 </nav>
 
-<!-- ═══ HERO ══════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-bg"></div>
   <video class="hero-video" src="hero-video.mp4" autoplay muted loop playsinline preload="none"></video>
@@ -349,7 +356,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   </div>
 </section>
 
-<!-- ═══ TICKER ════════════════════════════════════════ -->
 <div class="ticker">
   <div class="ticker-track">
     <div class="ticker-seg">
@@ -375,7 +381,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   </div>
 </div>
 
-<!-- ═══ SUMMER DROP ═══════════════════════════════════ -->
 <div class="summer-drop spy px" id="summer-drop">
 
   <div class="summer-drop-head reveal">
@@ -389,7 +394,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
     </div>
   </div>
 
-  <!-- Hero lifestyle shot -->
   <div class="drop-hero reveal d1">
     <img src="202605142353.png" alt="Built For The Grind — SoHo NYC">
     <div class="drop-hero-overlay">
@@ -398,7 +402,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
     </div>
   </div>
 
-  <!-- Three drop products -->
   <div class="drop-grid">
 
     <div class="pcard reveal d1">
@@ -445,40 +448,26 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 
   </div>
 
- <!-- Image Fit Fix applied directly to this section -->
-<style>
-  .lbook-card img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    display: block !important;
-  }
-</style>
-
-<!-- Secondary lifestyle shots -->
 <div class="lookbook-scroll reveal d4" style="margin-top:clamp(8px,1.5vw,14px); display:flex; gap:16px; overflow-x:auto;">
   
-  <!-- Card 1 -->
   <div class="lbook-card" style="position:relative; flex:0 0 80%; max-width:350px; aspect-ratio:3/4; overflow:hidden; border-radius:8px;">
-    <img src="202605150002.png" alt="Built For The Grind — NYC Night" loading="lazy" style="width:100% !important; height:100% !important; object-fit:cover !important; display:block !important;">
+    <img src="202605150002.png" alt="Built For The Grind — NYC Night" loading="lazy">
     <div class="lbook-overlay"><p>Summer Drop · NYC</p><h4>Built For The Grind</h4></div>
   </div>
   
-  <!-- Card 2 -->
   <div class="lbook-card" style="position:relative; flex:0 0 80%; max-width:350px; aspect-ratio:3/4; overflow:hidden; border-radius:8px;">
-    <img src="202605150013.png" alt="Lion Tee & Hats — NYC" loading="lazy" style="width:100% !important; height:100% !important; object-fit:cover !important; display:block !important;">
+    <img src="202605150013.png" alt="Lion Tee & Hats — NYC" loading="lazy">
     <div class="lbook-overlay"><p>Summer Drop · NYC</p><h4>The Lion</h4></div>
   </div>
   
-  <!-- Card 3 -->
   <div class="lbook-card" style="position:relative; flex:0 0 80%; max-width:350px; aspect-ratio:3/4; overflow:hidden; border-radius:8px;">
-    <img src="202605142353.png" alt="Built For The Grind — SoHo" loading="lazy" style="width:100% !important; height:100% !important; object-fit:cover !important; display:block !important;">
+    <img src="202605142353.png" alt="Built For The Grind — SoHo" loading="lazy">
     <div class="lbook-overlay"><p>Summer Drop · SoHo</p><h4>Built For The Grind</h4></div>
   </div>
 
 </div>
-<!-- ═══ PRODUCTS ══════════════════════════════════════ -->
+</div>
+
 <div class="products-section spy px" id="products">
 
   <div class="products-head reveal">
@@ -627,7 +616,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   </div>
 </div>
 
-<!-- ═══ LOOKBOOK ══════════════════════════════════════ -->
 <div class="lookbook spy px" id="lookbook">
   <div class="lookbook-head reveal">
     <div>
@@ -678,7 +666,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   </div>
 </div>
 
-<!-- ═══ DECREE ════════════════════════════════════════ -->
 <section class="decree spy px" id="decree">
   <div class="decree-glow"></div>
   <div class="decree-ghost">G-D</div>
@@ -694,7 +681,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   </div>
 </section>
 
-<!-- ═══ INITIATION ════════════════════════════════════ -->
 <div class="initiation spy px" id="join">
   <p class="eyebrow reveal" style="justify-content:center; margin-bottom:16px;">The Century</p>
   <h2 class="init-h reveal d1">Request<br>Access</h2>
@@ -706,7 +692,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   <p class="init-note reveal d4" id="join-note">No spam. Ever. Only what matters.</p>
 </div>
 
-<!-- ═══ MANIFESTO ═════════════════════════════════════ -->
 <section class="manifesto spy px">
   <p class="eyebrow reveal">What We Stand For</p>
   <div class="mfesto-grid">
@@ -717,14 +702,12 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   </div>
 </section>
 
-<!-- ═══ INSTAGRAM ═════════════════════════════════════ -->
 <div class="insta spy px">
   <p class="eyebrow reveal" style="justify-content:center; margin-bottom:16px;">Follow Along</p>
   <a href="https://www.instagram.com/chosencentury18" target="_blank" class="insta-h reveal d1">@CHOSENCENTURY18</a>
   <p class="insta-sub reveal d2">New drops, restocks & the movement</p>
 </div>
 
-<!-- ═══ FOOTER ════════════════════════════════════════ -->
 <footer>
   <div class="ft-top">
     <div>
@@ -854,4 +837,3 @@ async function handleJoin(e) {
 </script>
 </body>
 </html>
-
