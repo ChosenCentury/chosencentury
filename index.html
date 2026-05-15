@@ -237,16 +237,20 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .lookbook-scroll::-webkit-scrollbar { display:none; }
 .lbook-card { flex-shrink:0; scroll-snap-align:start; width:clamp(200px,42vw,320px); position:relative; overflow:hidden; background:var(--surface); aspect-ratio:2/3; }
 
-/* THE CRITICAL FIX OVERRIDE FOR SUMMER DROP CARDS */
+/* SUMMER DROP STREET IMAGE CARDS */
 .summer-drop .lbook-card {
-  aspect-ratio: 3/4 !important;
+  aspect-ratio: 3/4;
+  position: relative;
+  overflow: hidden;
 }
 .summer-drop .lbook-card img {
-  width: 100% !important;
-  max-width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center top !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center top;
   filter: brightness(.8) grayscale(.15);
   transition: transform .65s cubic-bezier(.25,.46,.45,.94), filter .35s;
 }
@@ -255,7 +259,7 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
   filter: brightness(.95) grayscale(0);
 }
 
-.lbook-card img { width:100%; height:100%; object-fit:cover; filter:brightness(.8) grayscale(.15); transition:transform .65s cubic-bezier(.25,.46,.45,.94), filter .35s; }
+.lbook-card img { position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; filter:brightness(.8) grayscale(.15); transition:transform .65s cubic-bezier(.25,.46,.45,.94), filter .35s; }
 .lbook-card:hover img { transform:scale(1.04); filter:brightness(.95) grayscale(0); }
 .lbook-overlay { position:absolute; bottom:0; left:0; right:0; padding:20px 16px; background:linear-gradient(0deg, rgba(0,0,0,.9) 0%, transparent 100%); z-index: 5; }
 .lbook-overlay p { font-size:9px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.4); }
