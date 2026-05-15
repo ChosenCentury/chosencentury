@@ -238,14 +238,19 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .lookbook-scroll::-webkit-scrollbar { display:none; }
 .lbook-card { flex-shrink:0; scroll-snap-align:start; width:clamp(200px,42vw,320px); position:relative; overflow:hidden; background:var(--surface); aspect-ratio:2/3; }
 
-/* THE FIT REPAIR WORK DONE HERE */
-.lbook-card img { 
-  width:100% !important; 
-  height:100% !important; 
-  object-fit:cover !important; 
-  object-position:center top !important; 
-  filter:brightness(.8) grayscale(.15); 
-  transition:transform .65s cubic-bezier(.25,.46,.45,.94), filter .35s; 
+/* Force the card to have a specific shape */
+.lbook-card.fix-height {
+  aspect-ratio: 3/4 !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Force the image to fill that shape */
+.lbook-card.fix-height img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
 }
 .lbook-card:hover img { transform:scale(1.04); filter:brightness(.95) grayscale(0); }
 .lbook-overlay { position:absolute; bottom:0; left:0; right:0; padding:20px 16px; background:linear-gradient(0deg, rgba(0,0,0,.9) 0%, transparent 100%); z-index: 5; }
@@ -448,26 +453,20 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 
   </div>
 
-<div class="lookbook-scroll reveal d4" style="margin-top:clamp(8px,1.5vw,14px); display:flex; gap:16px; overflow-x:auto;">
-  
-  <div class="lbook-card" style="position:relative; flex:0 0 80%; max-width:350px; aspect-ratio:3/4; overflow:hidden; border-radius:8px;">
-    <img src="202605150002.png" alt="Built For The Grind — NYC Night" loading="lazy">
+<div class="lookbook-scroll reveal d4" style="margin-top:clamp(8px,1.5vw,14px);">
+  <div class="lbook-card fix-height">
+    <img src="202605150002.png" alt="NYC Night">
     <div class="lbook-overlay"><p>Summer Drop · NYC</p><h4>Built For The Grind</h4></div>
   </div>
-  
-  <div class="lbook-card" style="position:relative; flex:0 0 80%; max-width:350px; aspect-ratio:3/4; overflow:hidden; border-radius:8px;">
-    <img src="202605150013.png" alt="Lion Tee & Hats — NYC" loading="lazy">
+  <div class="lbook-card fix-height">
+    <img src="202605150013.png" alt="Lion Tee">
     <div class="lbook-overlay"><p>Summer Drop · NYC</p><h4>The Lion</h4></div>
   </div>
-  
-  <div class="lbook-card" style="position:relative; flex:0 0 80%; max-width:350px; aspect-ratio:3/4; overflow:hidden; border-radius:8px;">
-    <img src="202605142353.png" alt="Built For The Grind — SoHo" loading="lazy">
+  <div class="lbook-card fix-height">
+    <img src="202605142353.png" alt="SoHo">
     <div class="lbook-overlay"><p>Summer Drop · SoHo</p><h4>Built For The Grind</h4></div>
   </div>
-
 </div>
-</div>
-
 <div class="products-section spy px" id="products">
 
   <div class="products-head reveal">
