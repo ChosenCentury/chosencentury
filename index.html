@@ -129,6 +129,61 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .ticker-dot { width:3px; height:3px; border-radius:50%; background:var(--gold); opacity:.4; flex-shrink:0; }
 
 /* ═══════════════════════════════════════════════════════
+   FALL/WINTER COUNTDOWN
+═══════════════════════════════════════════════════════ */
+.fw-countdown {
+  position:relative; overflow:hidden;
+  background:var(--black);
+  border-bottom:1px solid var(--border);
+  text-align:center;
+}
+.fw-countdown::before {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(ellipse 55% 60% at 50% 0%, rgba(196,154,46,.08) 0%, transparent 70%);
+}
+.fw-inner { position:relative; z-index:1; }
+.fw-eyebrow { justify-content:center; margin-bottom:18px; }
+.fw-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(40px,9vw,96px); letter-spacing:.05em; line-height:.92; }
+.fw-title .fw-gold { color:var(--gold); }
+.fw-sub { font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(14px,2.2vw,18px); color:rgba(255,255,255,.35); margin-top:16px; letter-spacing:.03em; }
+.fw-timer { display:flex; gap:clamp(14px,4vw,40px); justify-content:center; margin-top:44px; flex-wrap:wrap; }
+.fw-unit { display:flex; flex-direction:column; align-items:center; gap:8px; min-width:64px; }
+.fw-num { font-family:'Bebas Neue',sans-serif; font-size:clamp(36px,6vw,58px); line-height:1; color:var(--white); }
+.fw-label { font-size:9px; letter-spacing:.35em; text-transform:uppercase; color:rgba(255,255,255,.28); }
+.fw-colon { font-family:'Bebas Neue',sans-serif; font-size:clamp(28px,5vw,44px); color:rgba(255,255,255,.15); align-self:flex-start; margin-top:2px; }
+.fw-date { margin-top:38px; font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.25); }
+.fw-date strong { color:var(--gold); font-weight:600; }
+
+/* ═══════════════════════════════════════════════════════
+   STORY SECTION
+═══════════════════════════════════════════════════════ */
+.story {
+  position:relative; background:var(--deep);
+  border-bottom:1px solid var(--border);
+}
+.story-inner { max-width:680px; margin:0 auto; text-align:left; }
+.story-eyebrow { justify-content:flex-start; margin-bottom:28px; }
+.story-lede {
+  font-family:'EB Garamond',serif; font-size:clamp(19px,2.8vw,25px);
+  line-height:1.7; color:rgba(255,255,255,.75); margin-bottom:30px;
+}
+.story-btn { margin-bottom:0; }
+.story-full {
+  max-height:0; overflow:hidden;
+  transition:max-height .6s ease, margin-top .6s ease;
+  margin-top:0;
+}
+.story-full.open { max-height:1200px; margin-top:32px; }
+.story-full p {
+  font-family:'EB Garamond',serif; font-size:clamp(16px,2.2vw,19px);
+  line-height:1.75; color:rgba(255,255,255,.55); margin-bottom:20px;
+}
+.story-full p strong { color:var(--white); font-weight:600; }
+.story-full p.story-close { color:var(--white); font-style:italic; margin-top:8px; }
+.story-full p.story-mark { font-family:'Bebas Neue',sans-serif; font-style:normal; font-size:clamp(20px,2.8vw,26px); letter-spacing:.04em; color:var(--gold); margin-top:8px; }
+.story-btn-bottom { margin-top:36px; }
+
+/* ═══════════════════════════════════════════════════════
    SUMMER DROP SECTION
 ═══════════════════════════════════════════════════════ */
 .summer-drop {
@@ -350,7 +405,8 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 <nav id="nav">
   <a href="#" class="nav-logo">ChosenCentury</a>
   <div class="nav-right">
-    <a href="#summer-drop" class="nav-link nav-hide">Summer Drop</a>
+    <a href="#winter-uniform" class="nav-link nav-hide">Winter Uniform</a>
+    <a href="#story"       class="nav-link nav-hide">Story</a>
     <a href="#products"    class="nav-link nav-hide">Shop</a>
     <a href="#decree"      class="nav-link nav-hide">Decree</a>
     <a href="#join"        class="nav-link nav-hide">Join</a>
@@ -369,6 +425,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
     <p class="hero-sub">Uniforms for the Faithful</p>
     <div class="hero-btns">
       <a href="#summer-drop" class="btn btn-solid mag">Summer Drop</a>
+      <a href="#story"       class="btn btn-outline mag">The Story</a>
       <a href="#decree"      class="btn btn-outline mag">The Decree</a>
     </div>
   </div>
@@ -400,6 +457,24 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
       <span>Summer Drop · Limited Time</span><div class="ticker-dot"></div>
       <span>Uniforms For The Faithful</span><div class="ticker-dot"></div>
     </div>
+  </div>
+</div>
+
+<div class="fw-countdown spy px" id="winter-uniform">
+  <div class="fw-inner">
+    <p class="eyebrow fw-eyebrow">Coming Soon</p>
+    <h2 class="fw-title reveal">THE WINTER<br><span class="fw-gold">UNIFORM</span></h2>
+    <p class="fw-sub reveal d1">Cold weather. Same faith.</p>
+    <div class="fw-timer reveal d2" id="fw-timer">
+      <div class="fw-unit"><span class="fw-num" id="fw-days">00</span><span class="fw-label">Days</span></div>
+      <span class="fw-colon">:</span>
+      <div class="fw-unit"><span class="fw-num" id="fw-hours">00</span><span class="fw-label">Hours</span></div>
+      <span class="fw-colon">:</span>
+      <div class="fw-unit"><span class="fw-num" id="fw-mins">00</span><span class="fw-label">Mins</span></div>
+      <span class="fw-colon">:</span>
+      <div class="fw-unit"><span class="fw-num" id="fw-secs">00</span><span class="fw-label">Secs</span></div>
+    </div>
+    <p class="fw-date reveal d3">Website Drop · <strong>August 1st</strong> · Already Live on Etsy</p>
   </div>
 </div>
 
@@ -685,6 +760,23 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   </div>
 </div>
 
+<section class="story spy px" id="story">
+  <div class="story-inner">
+    <p class="eyebrow story-eyebrow">The Story</p>
+    <p class="story-lede reveal">I used to feel stuck. Not building anything. Not becoming anything. Just grinding, wondering if it would ever turn into something real. Then I realized G-D doesn't put people in a given century by accident.</p>
+    <button class="btn btn-outline mag story-btn reveal d1" id="story-toggle" onclick="toggleStory()">Read The Story</button>
+    <div class="story-full" id="story-full">
+      <p>If you're alive in this generation, in this exact moment, you're not here to drift. You're chosen for it.</p>
+      <p>ChosenCentury grew out of that truth. Faith-driven streetwear for people who run at life like a king of the jungle, bold like a lion, knowing G-D is right behind them.</p>
+      <p><strong>Faith Over Fear. Trust In G-D. Put The Work In. Chosen.</strong> Not just graphics. A mindset for when doubt gets loud, for when the path feels heavy.</p>
+      <p>Being chosen doesn't always look flashy. Sometimes it's praying when no one's listening. Sometimes it's getting up again, with nothing but faith and a next step.</p>
+      <p class="story-close">You weren't put in this century by accident. You weren't chosen to blend in. You were chosen for greatness, called to lead, not drift. This uniform is for the ones ready to walk in that.</p>
+      <p class="story-mark">ChosenCentury. Uniforms for the Faithful.</p>
+      <button class="btn btn-outline mag story-btn story-btn-bottom" onclick="toggleStory()">Close</button>
+    </div>
+  </div>
+</section>
+
 <section class="decree spy px" id="decree">
   <div class="decree-glow"></div>
   <div class="decree-ghost">G-D</div>
@@ -744,6 +836,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
       </div>
       <div class="ft-col">
         <h5>Brand</h5>
+        <a href="#story">The Story</a>
         <a href="#decree">The Decree</a>
         <a href="#lookbook">Lookbook</a>
         <a href="#join">Join the Century</a>
@@ -815,6 +908,46 @@ if (!isTouch) {
   });
 }
 
+/* ── Story expand/collapse ── */
+function toggleStory() {
+  const full = document.getElementById('story-full');
+  const topBtn = document.getElementById('story-toggle');
+  const opening = !full.classList.contains('open');
+  full.classList.toggle('open');
+  topBtn.style.display = opening ? 'none' : 'inline-flex';
+  if (opening) {
+    lenis.scrollTo(full, { offset: -100 });
+  } else {
+    lenis.scrollTo(topBtn, { offset: -100 });
+  }
+}
+
+/* ── Fall/Winter countdown ── */
+(function() {
+  const target = new Date('2026-08-01T00:00:00');
+  const days = document.getElementById('fw-days');
+  const hours = document.getElementById('fw-hours');
+  const mins = document.getElementById('fw-mins');
+  const secs = document.getElementById('fw-secs');
+  if (!days) return;
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    const diff = target - new Date();
+    if (diff <= 0) {
+      days.textContent = hours.textContent = mins.textContent = secs.textContent = '00';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    days.textContent = pad(d); hours.textContent = pad(h);
+    mins.textContent = pad(m); secs.textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
 /* ── Nav sticky ── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 55), { passive:true });
@@ -856,4 +989,5 @@ async function handleJoin(e) {
 </script>
 </body>
 </html>
+
 
