@@ -128,9 +128,7 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .ticker-seg span { font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.2); }
 .ticker-dot { width:3px; height:3px; border-radius:50%; background:var(--gold); opacity:.4; flex-shrink:0; }
 
-/* ═══════════════════════════════════════════════════════
-   FALL/WINTER COUNTDOWN
-═══════════════════════════════════════════════════════ */
+/* FW COUNTDOWN */
 .fw-countdown {
   position:relative; overflow:hidden;
   background:var(--black);
@@ -154,9 +152,7 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .fw-date { margin-top:38px; font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.25); }
 .fw-date strong { color:var(--gold); font-weight:600; }
 
-/* ═══════════════════════════════════════════════════════
-   STORY SECTION
-═══════════════════════════════════════════════════════ */
+/* STORY */
 .story {
   position:relative; background:var(--deep);
   border-bottom:1px solid var(--border);
@@ -183,9 +179,7 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .story-full p.story-mark { font-family:'Bebas Neue',sans-serif; font-style:normal; font-size:clamp(20px,2.8vw,26px); letter-spacing:.04em; color:var(--gold); margin-top:8px; }
 .story-btn-bottom { margin-top:36px; }
 
-/* ═══════════════════════════════════════════════════════
-   SUMMER DROP SECTION
-═══════════════════════════════════════════════════════ */
+/* SUMMER DROP */
 .summer-drop {
   background:var(--deep);
   border-top:1px solid var(--border);
@@ -208,7 +202,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
   letter-spacing:.18em; color:var(--gold);
 }
 
-/* Drop hero — full width lifestyle shot */
 .drop-hero {
   position:relative; width:100%; overflow:hidden;
   aspect-ratio:21/8; margin-bottom:clamp(8px,1.5vw,14px);
@@ -234,7 +227,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
   font-size:clamp(13px,1.8vw,18px); color:rgba(255,255,255,.45); margin-top:8px;
 }
 
-/* Drop grid — 3 products */
 .drop-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -243,9 +235,7 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 @media (max-width:640px) { .drop-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:380px) { .drop-grid { grid-template-columns:1fr; } }
 
-/* ═══════════════════════════════════════════════════════
-   PRODUCTS
-═══════════════════════════════════════════════════════ */
+/* PRODUCTS */
 .products-section { background:var(--black); }
 .products-head { display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:30px; }
 .view-all { font-size:9px; letter-spacing:.35em; text-transform:uppercase; color:rgba(255,255,255,.3); border-bottom:1px solid rgba(255,255,255,.1); padding-bottom:3px; transition:color .2s, border-color .2s; }
@@ -292,7 +282,7 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .lookbook-scroll::-webkit-scrollbar { display:none; }
 .lbook-card { flex-shrink:0; scroll-snap-align:start; width:clamp(200px,42vw,320px); position:relative; overflow:hidden; background:var(--surface); aspect-ratio:2/3; }
 
-/* SUMMER DROP STREET IMAGE CARDS — show full image, no cropping */
+/* SUMMER DROP street image cards */
 .summer-drop .lbook-card {
   aspect-ratio: unset;
   height: auto;
@@ -389,6 +379,20 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 .ft-bottom p { font-size:8px; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.13); }
 @media (max-width:500px) { .ft-bottom p:nth-child(2) { display:none; } }
 
+/* SOCIAL ROW */
+.social-row { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:36px; }
+.social-pill {
+  display:inline-flex; align-items:center; gap:9px;
+  font-size:9px; font-weight:600; letter-spacing:.28em; text-transform:uppercase;
+  color:rgba(255,255,255,.38);
+  border:1px solid rgba(255,255,255,.1);
+  padding:10px 18px;
+  transition:color .2s, border-color .2s, background .2s;
+}
+.social-pill:hover { color:var(--white); border-color:rgba(255,255,255,.35); background:rgba(255,255,255,.04); }
+.social-pill svg { flex-shrink:0; opacity:.6; transition:opacity .2s; }
+.social-pill:hover svg { opacity:1; }
+
 /* KEYFRAMES */
 @keyframes up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
 @keyframes fadeIn { from{opacity:0} to{opacity:1} }
@@ -410,7 +414,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
     <a href="#products"    class="nav-link nav-hide">Shop</a>
     <a href="#decree"      class="nav-link nav-hide">Decree</a>
     <a href="#join"        class="nav-link nav-hide">Join</a>
-    <a href="https://chosencentury.etsy.com" target="_blank" class="nav-btn mag">Shop Now</a>
+    <a href="https://chosencentury.printify.me" target="_blank" class="nav-btn mag">Shop Now</a>
   </div>
 </nav>
 
@@ -474,7 +478,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
       <span class="fw-colon">:</span>
       <div class="fw-unit"><span class="fw-num" id="fw-secs">00</span><span class="fw-label">Secs</span></div>
     </div>
-    <p class="fw-date reveal d3">Website Drop · <strong>August 1st</strong> · Already Live on Etsy</p>
+    <p class="fw-date reveal d3">Website Drop · <strong>August 1st</strong> · Already Live on Printify</p>
   </div>
 </div>
 
@@ -487,7 +491,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
     </div>
     <div class="right">
       <span class="drop-date">Three Pieces. One Drop.</span>
-      <a href="https://chosencentury.etsy.com" target="_blank" class="view-all">Shop on Etsy →</a>
+      <a href="https://chosencentury.printify.me" target="_blank" class="view-all">Shop Now →</a>
     </div>
   </div>
 
@@ -506,7 +510,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-new">New Drop</span></span>
         <span class="pcard-cat">Summer Drop</span>
         <img src="222146_0000.png" alt="Built For The Grind Tee" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4505843712" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041226" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">Summer Drop · 2026</p>
@@ -520,7 +524,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-new">New Drop</span></span>
         <span class="pcard-cat">Summer Drop</span>
         <img src="221234_0000.png" alt="Lion Graphic Trucker Hat" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4505340577" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041227" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">Summer Drop · 2026</p>
@@ -534,7 +538,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-new">New Drop</span></span>
         <span class="pcard-cat">Summer Drop</span>
         <img src="221508_0000.png" alt="Lion Graphic Dad Hat" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4505846424" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041223" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">Summer Drop · 2026</p>
@@ -569,7 +573,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
       <p class="eyebrow" style="margin-bottom:12px;">The Collection</p>
       <h2 class="section-title">Shop All</h2>
     </div>
-    <a href="https://chosencentury.etsy.com" target="_blank" class="view-all">Secure checkout via Etsy →</a>
+    <a href="https://chosencentury.printify.me" target="_blank" class="view-all">Shop Now →</a>
   </div>
 
   <div class="cat-tabs reveal d1">
@@ -586,7 +590,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-available">Official Uniform</span></span>
         <span class="pcard-cat">The Standard</span>
         <img src="1000268734.png" alt="Faith Over Fear Lightweight" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4487647129" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041220" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">The Standard</p>
@@ -600,7 +604,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-available">Official Uniform</span></span>
         <span class="pcard-cat">The Standard</span>
         <img src="1000268735.png" alt="Trust In G-D Lightweight" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4487644417" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041224" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">The Standard</p>
@@ -614,7 +618,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-available">Official Uniform</span></span>
         <span class="pcard-cat">The Standard</span>
         <img src="1000268863.png" alt="Faith Over Fear Signature" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4479490168" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041213" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">The Standard</p>
@@ -628,7 +632,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-available">Official Uniform</span></span>
         <span class="pcard-cat">The Standard</span>
         <img src="1000269693.png" alt="Trust In G-D Signature" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4475813402" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041212" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">The Standard</p>
@@ -642,7 +646,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-available">Official Uniform</span></span>
         <span class="pcard-cat">The Directives</span>
         <img src="1000273250.png" alt="Put The Work In" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4469981656" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041214" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">The Directives</p>
@@ -656,7 +660,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-available">Official Uniform</span></span>
         <span class="pcard-cat">The Directives</span>
         <img src="1000268721.png" alt="Trust In G-D Essential" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4470463365" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041225" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">The Directives</p>
@@ -670,7 +674,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-available">Official Uniform</span></span>
         <span class="pcard-cat">Icon Archive</span>
         <img src="1000268869.png" alt="Lion Graphic Tee" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4471098333" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041215" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">Icon Archive</p>
@@ -684,7 +688,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-available">Official Uniform</span></span>
         <span class="pcard-cat">Icon Archive</span>
         <img src="1000269686.png" alt="The Divine Compass" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4483767062" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041216" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">Icon Archive</p>
@@ -698,11 +702,11 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <span class="pcard-status"><span class="badge-available">Official Uniform</span></span>
         <span class="pcard-cat">Icon Archive</span>
         <img src="1000273240.png" alt="The Divine Anchor" loading="lazy">
-        <div class="pcard-cta"><a href="https://chosencentury.etsy.com/listing/4483580350" target="_blank" class="mag">Purchase Securely via Etsy</a></div>
+        <div class="pcard-cta"><a href="https://chosencentury.printify.me/product/30041217" target="_blank" class="mag">Shop Now</a></div>
       </div>
       <div class="pcard-info">
         <p class="pi-cat">Icon Archive</p>
-        <p class="pi-name">The Divine Anchor</p>
+        <p class="pi-name">Anchored With G-D</p>
         <p class="pi-ed">Archive Graphic</p>
       </div>
     </div>
@@ -730,12 +734,8 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 
   <div class="lookbook-scroll reveal d2">
     <div class="lbook-card">
-      <img src="202605131322.png" alt="Put The Work In — NYC Cobblestone" loading="lazy">
+      <img src="Male_models_walking_New_York_202606071733.png" alt="Put The Work In & And Let G-D Do The Rest — NYC" loading="lazy">
       <div class="lbook-overlay"><p>The Directives · SoHo</p><h4>Put The Work In</h4></div>
-    </div>
-    <div class="lbook-card">
-      <img src="202605131323.png" alt="And Let G-D Do The Rest — NYC Night" loading="lazy">
-      <div class="lbook-overlay"><p>The Directives · Rainy Night</p><h4>And Let G-D Do The Rest</h4></div>
     </div>
     <div class="lbook-card">
       <img src="202605131312.png" alt="Trust In G-D — Midnight SoHo" loading="lazy">
@@ -817,6 +817,25 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   <p class="eyebrow reveal" style="justify-content:center; margin-bottom:16px;">Follow Along</p>
   <a href="https://www.instagram.com/chosencentury18" target="_blank" class="insta-h reveal d1">@CHOSENCENTURY18</a>
   <p class="insta-sub reveal d2">New drops, restocks & the movement</p>
+
+  <div class="social-row reveal d3">
+    <a href="https://www.instagram.com/chosencentury18" target="_blank" class="social-pill mag" aria-label="Instagram">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <span>Instagram</span>
+    </a>
+    <a href="https://www.tiktok.com/@chosencentury18" target="_blank" class="social-pill mag" aria-label="TikTok">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.16 8.16 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+      <span>TikTok</span>
+    </a>
+    <a href="https://www.facebook.com/share/1D2Zkd5Fgq/" target="_blank" class="social-pill mag" aria-label="Facebook">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      <span>Facebook</span>
+    </a>
+    <a href="https://youtube.com/@chosencentury18" target="_blank" class="social-pill mag" aria-label="YouTube">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+      <span>YouTube</span>
+    </a>
+  </div>
 </div>
 
 <footer>
@@ -829,10 +848,10 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
       <div class="ft-col">
         <h5>Shop</h5>
         <a href="#summer-drop">Summer Drop</a>
-        <a href="https://chosencentury.etsy.com" target="_blank">All Products</a>
-        <a href="https://chosencentury.etsy.com" target="_blank">The Standard</a>
-        <a href="https://chosencentury.etsy.com" target="_blank">The Directives</a>
-        <a href="https://chosencentury.etsy.com" target="_blank">Icon Archive</a>
+        <a href="https://chosencentury.printify.me" target="_blank">All Products</a>
+        <a href="https://chosencentury.printify.me" target="_blank">The Standard</a>
+        <a href="https://chosencentury.printify.me" target="_blank">The Directives</a>
+        <a href="https://chosencentury.printify.me" target="_blank">Icon Archive</a>
       </div>
       <div class="ft-col">
         <h5>Brand</h5>
@@ -844,7 +863,10 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
       <div class="ft-col">
         <h5>Connect</h5>
         <a href="https://www.instagram.com/chosencentury18" target="_blank">Instagram</a>
-        <a href="https://chosencentury.etsy.com" target="_blank">Etsy Flagship</a>
+        <a href="https://www.tiktok.com/@chosencentury18" target="_blank">TikTok</a>
+        <a href="https://www.facebook.com/share/1D2Zkd5Fgq/" target="_blank">Facebook</a>
+        <a href="https://youtube.com/@chosencentury18" target="_blank">YouTube</a>
+        <a href="https://chosencentury.printify.me" target="_blank">Printify Shop</a>
       </div>
     </div>
   </div>
@@ -856,7 +878,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 </footer>
 
 <script>
-/* ── Lenis smooth scroll ── */
+/* Lenis smooth scroll */
 const lenis = new Lenis({
   duration: 0.9,
   easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -873,7 +895,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ── Custom cursor ── */
+/* Custom cursor */
 const isTouch = window.matchMedia('(hover:none)').matches;
 if (!isTouch) {
   const cur = document.getElementById('cur');
@@ -908,7 +930,7 @@ if (!isTouch) {
   });
 }
 
-/* ── Story expand/collapse ── */
+/* Story expand/collapse */
 function toggleStory() {
   const full = document.getElementById('story-full');
   const topBtn = document.getElementById('story-toggle');
@@ -922,7 +944,7 @@ function toggleStory() {
   }
 }
 
-/* ── Fall/Winter countdown ── */
+/* Fall/Winter countdown */
 (function() {
   const target = new Date('2026-08-01T00:00:00');
   const days = document.getElementById('fw-days');
@@ -948,17 +970,17 @@ function toggleStory() {
   setInterval(tick, 1000);
 })();
 
-/* ── Nav sticky ── */
+/* Nav sticky */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 55), { passive:true });
 
-/* ── Scroll reveal ── */
+/* Scroll reveal */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
 }, { threshold: 0 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-/* ── Category filter ── */
+/* Category filter */
 function filterCat(cat, btn) {
   document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('on'));
   btn.classList.add('on');
@@ -967,7 +989,7 @@ function filterCat(cat, btn) {
   });
 }
 
-/* ── Newsletter join ── */
+/* Newsletter join */
 async function handleJoin(e) {
   e.preventDefault();
   const note = document.getElementById('join-note');
@@ -989,5 +1011,3 @@ async function handleJoin(e) {
 </script>
 </body>
 </html>
-
-
