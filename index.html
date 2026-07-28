@@ -220,7 +220,7 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 }
 @media (max-width:600px) { .drop-hero { aspect-ratio:3/2; } }
 .drop-hero img {
-  width:100%; height:100%; object-fit:cover; object-position:center 30%;
+  width:100%; height:100%; object-fit:cover; object-position:center 15%;
   filter:brightness(.88);
   transition:transform .8s cubic-bezier(.25,.46,.45,.94), filter .4s;
 }
@@ -297,64 +297,42 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .lookbook-scroll::-webkit-scrollbar { display:none; }
 .lbook-card { flex-shrink:0; scroll-snap-align:start; width:clamp(200px,42vw,320px); position:relative; overflow:hidden; background:var(--surface); aspect-ratio:2/3; }
 
-/* SUMMER DROP STREET IMAGE CARDS — show full image, no cropping */
-.summer-drop .lbook-card {
-  aspect-ratio: unset;
-  height: auto;
-  width: clamp(240px, 55vw, 400px);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-.summer-drop .lbook-card img {
-  position: static;
-  inset: unset;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  object-fit: unset;
-  display: block;
-  filter: brightness(.88) grayscale(.1);
-  transition: transform .65s cubic-bezier(.25,.46,.45,.94), filter .35s;
-}
-.summer-drop .lbook-card:hover img {
-  transform: scale(1.03);
-  filter: brightness(1) grayscale(0);
-}
-.summer-drop .lbook-card .lbook-overlay {
-  position: static;
-  background: rgba(0,0,0,0.82);
-  padding: 14px 16px;
-}
-  /* Override: Winter Uniform lookbook cards should crop/fill normally, not full-bleed */
-#winter-drop .lookbook-scroll .lbook-card {
-  aspect-ratio: 2/3;
-  height: auto;
-  width: clamp(200px, 42vw, 320px);
-}
-#winter-drop .lookbook-scroll .lbook-card img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center 20%;
-  filter: brightness(.8) grayscale(.15);
-}
-#winter-drop .lookbook-scroll .lbook-card .lbook-overlay {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: linear-gradient(0deg, rgba(0,0,0,.9) 0%, transparent 100%);
-  padding: 20px 16px;
-}
-
 .lbook-card img { position:absolute; inset:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:center; filter:brightness(.8) grayscale(.15); transition:transform .65s cubic-bezier(.25,.46,.45,.94), filter .35s; }
 .lbook-card:hover img { transform:scale(1.04); filter:brightness(.95) grayscale(0); }
 .lbook-overlay { position:absolute; bottom:0; left:0; right:0; padding:20px 16px; background:linear-gradient(0deg, rgba(0,0,0,.9) 0%, transparent 100%); z-index: 5; }
 .lbook-overlay p { font-size:9px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.4); }
 .lbook-overlay h4 { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:.08em; margin-top:2px; }
+
+/* WINTER UNIFORM LOOKBOOK CARDS — show the full image, letterboxed, never cropped/zoomed */
+#winter-drop .lookbook-scroll .lbook-card {
+  aspect-ratio: unset;
+  height: auto;
+  width: clamp(220px, 46vw, 340px);
+  overflow: hidden;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#winter-drop .lookbook-scroll .lbook-card img {
+  position: static;
+  inset: unset;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  filter: brightness(.92) grayscale(.1);
+}
+#winter-drop .lookbook-scroll .lbook-card:hover img {
+  transform: scale(1.02);
+  filter: brightness(1) grayscale(0);
+}
+#winter-drop .lookbook-scroll .lbook-card .lbook-overlay {
+  position: relative;
+  background: rgba(0,0,0,.82);
+  padding: 14px 16px;
+}
 
 /* DECREE */
 .decree { position:relative; overflow:hidden; background:var(--deep); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
