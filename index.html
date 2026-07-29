@@ -133,9 +133,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .ticker-seg span { font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.2); }
 .ticker-dot { width:3px; height:3px; border-radius:50%; background:var(--gold); opacity:.4; flex-shrink:0; }
 
-/* ═══════════════════════════════════════════════════════
-   FALL/WINTER COUNTDOWN
-═══════════════════════════════════════════════════════ */
 .fw-countdown {
   position:relative; overflow:hidden;
   background:var(--black);
@@ -159,9 +156,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .fw-date { margin-top:38px; font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.25); }
 .fw-date strong { color:var(--gold); font-weight:600; }
 
-/* ═══════════════════════════════════════════════════════
-   STORY SECTION
-═══════════════════════════════════════════════════════ */
 .story {
   position:relative; background:var(--deep);
   border-bottom:1px solid var(--border);
@@ -188,9 +182,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .story-full p.story-mark { font-family:'Bebas Neue',sans-serif; font-style:normal; font-size:clamp(20px,2.8vw,26px); letter-spacing:.04em; color:var(--gold); margin-top:8px; }
 .story-btn-bottom { margin-top:36px; }
 
-/* ═══════════════════════════════════════════════════════
-   SUMMER DROP SECTION
-═══════════════════════════════════════════════════════ */
 .summer-drop {
   background:var(--deep);
   border-top:1px solid var(--border);
@@ -213,7 +204,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
   letter-spacing:.18em; color:var(--gold);
 }
 
-/* Drop hero — full width lifestyle shot */
 .drop-hero {
   position:relative; width:100%; overflow:hidden;
   aspect-ratio:6/5; margin-bottom:clamp(8px,1.5vw,14px);
@@ -247,7 +237,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
   font-size:clamp(13px,1.8vw,18px); color:rgba(255,255,255,.45); margin-top:8px;
 }
 
-/* Drop grid — 3 products */
 .drop-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -256,9 +245,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 @media (max-width:640px) { .drop-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:380px) { .drop-grid { grid-template-columns:1fr; } }
 
-/* ═══════════════════════════════════════════════════════
-   PRODUCTS
-═══════════════════════════════════════════════════════ */
 .products-section { background:var(--black); }
 .products-head { display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:30px; }
 .view-all { font-size:9px; letter-spacing:.35em; text-transform:uppercase; color:rgba(255,255,255,.3); border-bottom:1px solid rgba(255,255,255,.1); padding-bottom:3px; transition:color .2s, border-color .2s; }
@@ -272,7 +258,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 @media (min-width:880px) { .pgrid { grid-template-columns:repeat(3,1fr); } }
 @media (max-width:400px) { .pgrid { grid-template-columns:1fr; } }
 
-/* CARD */
 .pcard { background:var(--surface); overflow:hidden; display:flex; flex-direction:column; transition:transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s; }
 .pcard:hover { transform:translateY(-4px); box-shadow:0 22px 55px rgba(0,0,0,.65); }
 .pcard-img { position:relative; aspect-ratio:1/1; overflow:hidden; background:#0c0c0c; flex-shrink:0; }
@@ -289,7 +274,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .pi-name { font-family:'Bebas Neue',sans-serif; font-size:clamp(18px,3vw,22px); letter-spacing:.1em; line-height:1.1; }
 .pi-ed { font-size:8px; letter-spacing:.2em; color:rgba(255,255,255,.27); text-transform:uppercase; margin-top:2px; }
 
-/* LOOKBOOK */
 .lookbook { border-top:1px solid var(--border); }
 .lookbook-head { display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:28px; }
 .lookbook-hint { font-size:9px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.22); animation:hintBounce 1.6s ease-in-out infinite; }
@@ -311,11 +295,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .lbook-overlay p { font-size:9px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.4); }
 .lbook-overlay h4 { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:.08em; margin-top:2px; }
 
-/* WINTER UNIFORM LOOKBOOK CARDS — some source images are wide diptychs
-   (front+back shots side by side), some are single portrait shots. Instead of
-   forcing every image into the same box (which crops/zooms mismatched ratios),
-   each card is sized by its own image's natural aspect ratio at a shared height.
-   Nothing is ever cropped or stretched. */
 #winter-drop .lookbook-scroll .lbook-card {
   aspect-ratio: unset;
   width: auto;
@@ -348,7 +327,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
   flex-shrink: 0;
 }
 
-/* DECREE */
 .decree { position:relative; overflow:hidden; background:var(--deep); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 .decree-glow { position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse 55% 60% at 50% 50%, rgba(196,154,46,.045) 0%, transparent 70%); }
 .decree-ghost { position:absolute; right:clamp(-20px,-2vw,-40px); top:50%; transform:translateY(-50%); font-family:'Bebas Neue',sans-serif; font-size:clamp(140px,22vw,340px); color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.033); line-height:1; letter-spacing:.06em; pointer-events:none; user-select:none; white-space:nowrap; }
@@ -360,7 +338,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .decree-quote strong { color:var(--white); font-style:normal; font-weight:500; }
 .decree-stamp { font-family:'Bebas Neue',sans-serif; font-size:clamp(20px,3.5vw,36px); letter-spacing:.14em; color:rgba(255,255,255,.11); padding-top:28px; border-top:1px solid var(--border); }
 
-/* INITIATION */
 .initiation { text-align:center; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--surface); }
 .init-h { font-family:'Bebas Neue',sans-serif; font-size:clamp(40px,7vw,80px); letter-spacing:.08em; line-height:.9; margin:18px 0 12px; }
 .init-sub { font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(14px,2vw,18px); color:rgba(255,255,255,.33); margin-bottom:34px; }
@@ -372,7 +349,6 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .init-btn:hover { background:var(--gold); border-color:var(--gold); }
 .init-note { font-size:8px; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.18); margin-top:14px; }
 
-/* MANIFESTO */
 .manifesto { background:var(--black); border-top:1px solid var(--border); }
 .mfesto-grid { display:grid; grid-template-columns:1fr; gap:0; margin-top:44px; }
 @media (min-width:700px) { .mfesto-grid { grid-template-columns:1fr 1fr; } }
@@ -387,13 +363,14 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .ml-t { font-family:'Bebas Neue',sans-serif; font-size:clamp(22px,4vw,34px); letter-spacing:.08em; line-height:1.1; }
 .ml-s { display:block; font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(13px,1.8vw,16px); color:rgba(255,255,255,.28); margin-top:3px; }
 
-/* INSTAGRAM */
 .insta { text-align:center; border-top:1px solid var(--border); }
 .insta-h { font-family:'Bebas Neue',sans-serif; font-size:clamp(34px,8vw,84px); letter-spacing:.07em; display:inline-block; transition:color .2s; }
 .insta-h:hover { color:rgba(255,255,255,.38); }
 .insta-sub { font-size:9px; letter-spacing:.32em; text-transform:uppercase; color:rgba(255,255,255,.2); margin-top:8px; }
+.insta-socials { display:flex; gap:20px; justify-content:center; margin-top:24px; }
+.insta-socials a { font-size:9px; font-weight:600; letter-spacing:.28em; text-transform:uppercase; color:rgba(255,255,255,.35); border-bottom:1px solid rgba(255,255,255,.12); padding-bottom:4px; transition:color .2s, border-color .2s; }
+.insta-socials a:hover { color:var(--gold); border-color:var(--gold); }
 
-/* FOOTER */
 footer { background:var(--deep); border-top:1px solid var(--border); padding:clamp(52px,8vw,84px) var(--px) 36px; }
 .ft-top { display:grid; grid-template-columns:1fr; gap:40px; margin-bottom:48px; }
 @media (min-width:580px) { .ft-top { grid-template-columns:auto 1fr; align-items:start; } }
@@ -408,7 +385,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 .ft-bottom p { font-size:8px; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.13); }
 @media (max-width:500px) { .ft-bottom p:nth-child(2) { display:none; } }
 
-/* KEYFRAMES */
 @keyframes up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
 @keyframes fadeIn { from{opacity:0} to{opacity:1} }
 @keyframes pulse { 0%,100%{opacity:.28} 50%{opacity:.8} }
@@ -429,7 +405,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
     <a href="#products"    class="nav-link nav-hide">Shop</a>
     <a href="#decree"      class="nav-link nav-hide">Decree</a>
     <a href="#join"        class="nav-link nav-hide">Join</a>
-    <a href="https://chosencentury.etsy.com" target="_blank" class="nav-btn mag">Shop Now</a>
+    <a href="https://chosencentury.printify.me/" target="_blank" class="nav-btn mag">Shop Now</a>
   </div>
 </nav>
 
@@ -912,6 +888,12 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   <p class="eyebrow reveal" style="justify-content:center; margin-bottom:16px;">Follow Along</p>
   <a href="https://www.instagram.com/chosencentury18" target="_blank" class="insta-h reveal d1">@CHOSENCENTURY18</a>
   <p class="insta-sub reveal d2">New drops, restocks & the movement</p>
+  <div class="insta-socials reveal d3">
+    <a href="https://www.instagram.com/chosencentury18" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@chosencentury18?_r=1&_t=ZT-98RwSkIE606" target="_blank">TikTok</a>
+    <a href="https://youtube.com/@chosencentury18?si=MWLz41guNauCbBUd" target="_blank">YouTube</a>
+    <a href="https://www.facebook.com/share/1MZoCYn3Q7/" target="_blank">Facebook</a>
+  </div>
 </div>
 
 <footer>
@@ -939,6 +921,9 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
       <div class="ft-col">
         <h5>Connect</h5>
         <a href="https://www.instagram.com/chosencentury18" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@chosencentury18?_r=1&_t=ZT-98RwSkIE606" target="_blank">TikTok</a>
+        <a href="https://youtube.com/@chosencentury18?si=MWLz41guNauCbBUd" target="_blank">YouTube</a>
+        <a href="https://www.facebook.com/share/1MZoCYn3Q7/" target="_blank">Facebook</a>
         <a href="https://chosencentury.etsy.com" target="_blank">Etsy Flagship</a>
       </div>
     </div>
@@ -951,7 +936,6 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 </footer>
 
 <script>
-/* ── Lenis smooth scroll ── */
 const lenis = new Lenis({
   duration: 0.9,
   easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -968,7 +952,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ── Custom cursor ── */
 const isTouch = window.matchMedia('(hover:none)').matches;
 if (!isTouch) {
   const cur = document.getElementById('cur');
@@ -1003,7 +986,6 @@ if (!isTouch) {
   });
 }
 
-/* ── Story expand/collapse ── */
 function toggleStory() {
   const full = document.getElementById('story-full');
   const topBtn = document.getElementById('story-toggle');
@@ -1017,17 +999,14 @@ function toggleStory() {
   }
 }
 
-/* ── Nav sticky ── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 55), { passive:true });
 
-/* ── Scroll reveal ── */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
 }, { threshold: 0 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-/* ── Category filter ── */
 function filterCat(cat, btn) {
   document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('on'));
   btn.classList.add('on');
@@ -1036,7 +1015,6 @@ function filterCat(cat, btn) {
   });
 }
 
-/* ── Newsletter join ── */
 async function handleJoin(e) {
   e.preventDefault();
   const note = document.getElementById('join-note');
@@ -1058,3 +1036,4 @@ async function handleJoin(e) {
 </script>
 </body>
 </html>
+
