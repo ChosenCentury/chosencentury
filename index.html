@@ -882,7 +882,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 <div class="initiation spy px" id="join">
   <p class="eyebrow reveal" style="justify-content:center; margin-bottom:16px;">The Century</p>
   <h2 class="init-h reveal d1">Request<br>Access</h2>
-  <p class="init-sub reveal d2">Join the Century. First access to drops, archived pieces & the movement.</p>
+  <p class="init-sub reveal d2">Join the list. Every drop goes out to the Century a day before it goes public.</p>
   <form class="init-form reveal d3" onsubmit="handleJoin(event)">
     <input class="init-input" name="email" type="email" placeholder="YOUR EMAIL ADDRESS" required>
     <button class="init-btn mag" type="submit">Join</button>
@@ -1065,7 +1065,7 @@ async function handleJoin(e) {
   const scriptURL = 'https://script.google.com/macros/s/AKfycbyJxF5UaDo65Jq_nW_LGouAZoI8j_wpFlq9kZlsiNaKC86ROPANFbh8tNLqCh8NyRB7uA/exec';
   try {
     await fetch(scriptURL, { method:'POST', mode:'no-cors', body:new FormData(e.target) });
-    note.textContent = "You're in. Welcome to the Century.";
+    note.textContent = "You're in. Welcome to the Century. Watch your inbox before the next drop.";
     note.style.color = 'var(--gold)';
     e.target.reset();
   } catch (error) {
