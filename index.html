@@ -390,6 +390,20 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 @keyframes pulse { 0%,100%{opacity:.28} 50%{opacity:.8} }
 @keyframes tick { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 @keyframes hintBounce { 0%,100%{transform:translateX(0)} 50%{transform:translateX(5px)} }
+
+/* FAQ */
+.faq { scroll-margin-top:70px; background:var(--deep); border-top:1px solid var(--border); }
+.faq-inner { max-width:720px; margin:0 auto; }
+.faq .eyebrow { margin-bottom:20px; }
+.faq-list { margin-top:36px; border-top:1px solid var(--border); }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-item summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:22px 0; font-size:13px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.75); transition:color .2s; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item summary::after { content:'+'; font-family:'Bebas Neue',sans-serif; font-size:24px; line-height:1; color:var(--gold); flex-shrink:0; transition:transform .25s; }
+.faq-item[open] summary::after { transform:rotate(45deg); }
+.faq-item summary:hover { color:var(--white); }
+.faq-item p { font-family:'EB Garamond',serif; font-size:clamp(16px,2.2vw,19px); line-height:1.7; color:rgba(255,255,255,.55); padding:0 0 24px; max-width:620px; }
+.faq-item p a { color:var(--gold); border-bottom:1px solid rgba(196,154,46,.4); }
 </style>
 </head>
 <body>
@@ -403,6 +417,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
     <a href="#winter-uniform" class="nav-link nav-hide">Winter Uniform</a>
     <a href="#story"       class="nav-link nav-hide">Story</a>
     <a href="#products"    class="nav-link nav-hide">Shop</a>
+    <a href="#faq"         class="nav-link nav-hide">FAQ</a>
     <a href="#decree"      class="nav-link nav-hide">Decree</a>
     <a href="#join"        class="nav-link nav-hide">Join</a>
     <a href="https://shop.chosencentury.com/" target="_blank" class="nav-btn mag">Shop Now</a>
@@ -422,6 +437,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
       <a href="#winter-drop" class="btn btn-solid mag">Winter Uniform</a>
       <a href="#story"       class="btn btn-outline mag">The Story</a>
       <a href="#decree"      class="btn btn-outline mag">The Decree</a>
+      <a href="#faq"         class="btn btn-outline mag">FAQ</a>
     </div>
   </div>
   <div class="scroll-cue">
@@ -896,6 +912,31 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   </div>
 </div>
 
+<section class="faq spy px" id="faq">
+  <div class="faq-inner">
+    <p class="eyebrow reveal">Questions</p>
+    <h2 class="section-title reveal d1">FAQ</h2>
+    <div class="faq-list reveal d2">
+      <details class="faq-item">
+        <summary>How long does shipping take?</summary>
+        <p>Everything is made to order, so your piece gets printed before it ships. Shipping is free on US orders. For international orders, shipping options and costs show at checkout once you enter your address.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I return or exchange something?</summary>
+        <p>If something shows up with a defect or isn't what you ordered, contact us within 30 days of receiving it and we'll make it right. Since every piece is made just for you, we can't take returns for size or change of mind, so check the size guide on the product page before you order.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is everything made to order?</summary>
+        <p>Yes. We don't keep stock sitting in a warehouse. Each piece is printed after you order it, so there's no waste and nothing is made that nobody wanted.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Something's wrong with my order. Who do I talk to?</summary>
+        <p>Email us at <a href="mailto:chosencentury@gmail.com">chosencentury@gmail.com</a> or DM us on <a href="https://www.instagram.com/chosencentury18" target="_blank">Instagram</a> and we'll sort it out.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="ft-top">
     <div>
@@ -917,6 +958,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <a href="#decree">The Decree</a>
         <a href="#lookbook">Lookbook</a>
         <a href="#join">Join the Century</a>
+        <a href="#faq">FAQ</a>
       </div>
       <div class="ft-col">
         <h5>Connect</h5>
