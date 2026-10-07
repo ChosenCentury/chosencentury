@@ -404,6 +404,14 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 .faq-item summary:hover { color:var(--white); }
 .faq-item p { font-family:'EB Garamond',serif; font-size:clamp(16px,2.2vw,19px); line-height:1.7; color:rgba(255,255,255,.55); padding:0 0 24px; max-width:620px; }
 .faq-item p a { color:var(--gold); border-bottom:1px solid rgba(196,154,46,.4); }
+
+/* REAL PHOTO FEATURE */
+.realshot { border-top:1px solid var(--border); background:var(--black); }
+.realshot-inner { display:grid; grid-template-columns:1fr; gap:36px; align-items:center; max-width:1000px; margin:0 auto; }
+.realshot-img { overflow:hidden; background:var(--surface); max-width:460px; width:100%; margin:0 auto; }
+.realshot-img img { width:100%; height:auto; display:block; }
+.realshot-text { font-family:'EB Garamond',serif; font-size:clamp(17px,2.4vw,21px); line-height:1.7; color:rgba(255,255,255,.55); margin-top:18px; max-width:420px; }
+@media (min-width:820px) { .realshot-inner { grid-template-columns:minmax(0,460px) 1fr; gap:64px; } .realshot-img { margin:0; } }
 </style>
 </head>
 <body>
@@ -801,48 +809,16 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
   </div>
 </div>
 
-<div class="lookbook spy px" id="lookbook">
-  <div class="lookbook-head reveal">
-    <div>
-      <p class="eyebrow" style="margin-bottom:12px;">The Lookbook</p>
-      <h2 class="section-title">In The Streets</h2>
+<div class="realshot spy px" id="lookbook">
+  <div class="realshot-inner">
+    <div class="realshot-img reveal">
+      <img src="trust-in-gd-real.jpg" alt="Trust In G-D tee worn on a beach in front of the ocean" loading="lazy">
     </div>
-    <span class="lookbook-hint reveal d2">Swipe →</span>
-  </div>
-
-  <div class="lbook-hero reveal d1">
-    <img src="202605131327.png" alt="Lion Graphic Tee — Broadway NYC">
-    <div class="lbook-hero-overlay">
-      <p class="eyebrow" style="color:rgba(255,255,255,.45); margin-bottom:10px;">Broadway, New York City</p>
-      <h3>Lion Graphic Tee</h3>
-      <span>Icon Archive · Black</span>
-    </div>
-  </div>
-
-  <div class="lookbook-scroll reveal d2">
-    <div class="lbook-card">
-      <img src="202606071733.png" alt="Put The Work In — And Let G-D Do The Rest — NYC" loading="lazy">
-      <div class="lbook-overlay"><p>The Directives · NYC</p><h4>Put The Work In</h4></div>
-    </div>
-    <div class="lbook-card">
-      <img src="202605131312.png" alt="Trust In G-D — Midnight SoHo" loading="lazy">
-      <div class="lbook-overlay"><p>The Standard · SoHo Night</p><h4>Trust In G-D</h4></div>
-    </div>
-    <div class="lbook-card">
-      <img src="202605131319.png" alt="Divine Compass — NYC Mirror" loading="lazy">
-      <div class="lbook-overlay"><p>Icon Archive · NYC</p><h4>The Divine Compass</h4></div>
-    </div>
-    <div class="lbook-card">
-      <img src="202605131316.png" alt="Anchored With G-D — DUMBO Brooklyn" loading="lazy">
-      <div class="lbook-overlay"><p>Icon Archive · DUMBO</p><h4>Anchored With G-D</h4></div>
-    </div>
-    <div class="lbook-card">
-      <img src="202605131302.png" alt="Faith Over Fear — Brooklyn Bridge" loading="lazy">
-      <div class="lbook-overlay"><p>The Standard · Brooklyn</p><h4>Faith Over Fear</h4></div>
-    </div>
-    <div class="lbook-card">
-      <img src="202605131324.png" alt="Trust In G-D — SoHo Broadway" loading="lazy">
-      <div class="lbook-overlay"><p>The Standard · Broadway</p><h4>Trust In G-D</h4></div>
+    <div class="realshot-copy">
+      <p class="eyebrow reveal" style="margin-bottom:14px;">The Real Thing</p>
+      <h2 class="section-title reveal d1">Trust In G-D</h2>
+      <p class="realshot-text reveal d2">A real piece, worn for real. No renders. More photos land here as the new pieces come in.</p>
+      <a href="#products" class="btn btn-solid mag reveal d3" style="margin-top:28px;">Shop The Standard</a>
     </div>
   </div>
 </div>
