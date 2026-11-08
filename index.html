@@ -368,6 +368,7 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
 .insta { text-align:center; border-top:1px solid var(--border); }
 .insta-h { font-family:'Bebas Neue',sans-serif; font-size:clamp(34px,8vw,84px); letter-spacing:.07em; display:inline-block; transition:color .2s; }
 .insta-h:hover { color:rgba(255,255,255,.38); }
+@media (max-width:600px) { .insta-h { font-size:min(34px,7vw); max-width:100%; overflow-wrap:anywhere; } }
 .insta-sub { font-size:9px; letter-spacing:.32em; text-transform:uppercase; color:rgba(255,255,255,.2); margin-top:8px; }
 .insta-socials { display:flex; gap:20px; justify-content:center; margin-top:24px; }
 .insta-socials a { font-size:9px; font-weight:600; letter-spacing:.28em; text-transform:uppercase; color:rgba(255,255,255,.35); border-bottom:1px solid rgba(255,255,255,.12); padding-bottom:4px; transition:color .2s, border-color .2s; }
@@ -414,6 +415,32 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
 .realshot-img img { width:100%; height:auto; display:block; }
 .realshot-text { font-family:'EB Garamond',serif; font-size:clamp(17px,2.4vw,21px); line-height:1.7; color:rgba(255,255,255,.55); margin-top:18px; max-width:420px; }
 @media (min-width:820px) { .realshot-inner { grid-template-columns:minmax(0,460px) 1fr; gap:64px; } .realshot-img { margin:0; } }
+
+/* MOBILE MENU */
+.nav-burger { display:none; width:36px; height:36px; align-items:center; justify-content:center; flex-direction:column; gap:6px; margin-right:-8px; }
+.nav-burger span { display:block; width:22px; height:1.5px; background:var(--white); transition:transform .3s ease, opacity .2s ease; }
+.nav-burger.open span:nth-child(1) { transform:translateY(3.75px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { transform:translateY(-3.75px) rotate(-45deg); }
+.mobile-menu { display:none; }
+html.menu-lock { overflow:hidden; }
+@media (max-width:600px) {
+  .nav-right { gap:14px; }
+  .nav-burger { display:flex; }
+  .mobile-menu { position:fixed; inset:0; z-index:790; display:flex; flex-direction:column; justify-content:center; padding:96px var(--px) 40px; background:var(--black); opacity:0; visibility:hidden; transition:opacity .3s ease, visibility .3s ease; overscroll-behavior:contain; }
+  .mobile-menu.open { opacity:1; visibility:visible; }
+  .mobile-menu::before { content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse 70% 40% at 50% 0%, rgba(196,154,46,.07) 0%, transparent 70%); }
+  .mm-links { position:relative; display:flex; flex-direction:column; }
+  .mm-links a { font-family:'Bebas Neue',sans-serif; font-size:clamp(40px,12vw,56px); letter-spacing:.08em; line-height:1.2; padding:6px 0; color:rgba(255,255,255,.7); border-bottom:1px solid var(--border); transform:translateY(10px); opacity:0; transition:color .2s, transform .35s ease, opacity .35s ease; }
+  .mobile-menu.open .mm-links a { transform:none; opacity:1; }
+  .mobile-menu.open .mm-links a:nth-child(2) { transition-delay:.04s; }
+  .mobile-menu.open .mm-links a:nth-child(3) { transition-delay:.08s; }
+  .mobile-menu.open .mm-links a:nth-child(4) { transition-delay:.12s; }
+  .mobile-menu.open .mm-links a:nth-child(5) { transition-delay:.16s; }
+  .mobile-menu.open .mm-links a:nth-child(6) { transition-delay:.2s; }
+  .mm-links a:active { color:var(--gold); }
+  .mm-social { position:relative; display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:36px; }
+  .mm-social a { font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.32); }
+}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYLCB7ZZYS"></script>
@@ -440,8 +467,26 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
     <a href="#decree"      class="nav-link nav-hide">Decree</a>
     <a href="#join"        class="nav-link nav-hide">Join</a>
     <a href="https://shop.chosencentury.com/" target="_blank" class="nav-btn mag">Shop Now</a>
+    <button class="nav-burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mm-links">
+    <a href="#winter-uniform">Winter Uniform</a>
+    <a href="#story">Story</a>
+    <a href="#products">Shop</a>
+    <a href="#faq">FAQ</a>
+    <a href="#decree">Decree</a>
+    <a href="#join">Join</a>
+  </div>
+  <div class="mm-social">
+    <a href="https://www.instagram.com/chosencentury18" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@chosencentury18?_r=1&_t=ZT-98RwSkIE606" target="_blank">TikTok</a>
+    <a href="https://youtube.com/@chosencentury18?si=MWLz41guNauCbBUd" target="_blank">YouTube</a>
+    <a href="https://www.facebook.com/share/1MZoCYn3Q7/" target="_blank">Facebook</a>
+  </div>
+</div>
 
 <section class="hero">
   <div class="hero-bg"></div>
@@ -890,6 +935,10 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
         <summary>Something's wrong with my order. Who do I talk to?</summary>
         <p>Email us at <a href="mailto:chosencentury@gmail.com">chosencentury@gmail.com</a> or DM us on <a href="https://www.instagram.com/chosencentury18" target="_blank">Instagram</a> and we'll sort it out.</p>
       </details>
+      <details class="faq-item">
+        <summary>Where are official ChosenCentury products sold?</summary>
+        <p>Only at chosencentury.com, shop.chosencentury.com, and our <a href="https://chosencentury.etsy.com" target="_blank">Etsy shop</a>. Anything sold under our name or designs anywhere else is not from us and is not authorized.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -928,7 +977,7 @@ footer { background:var(--deep); border-top:1px solid var(--border); padding:cla
     </div>
   </div>
   <div class="ft-bottom">
-    <p>© 2026 ChosenCentury · All Rights Reserved</p>
+    <p>© 2026 ChosenCentury™ · All Rights Reserved</p>
     <p>Faith · Strength · Purpose</p>
     <p>G-D Is There.</p>
   </div>
@@ -1041,6 +1090,34 @@ async function handleJoin(e) {
     btn.innerText = "JOIN";
   }
 }
+</script>
+<script>
+(function () {
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobile-menu');
+  if (!burger || !menu) return;
+  var html = document.documentElement;
+  function setOpen(open) {
+    burger.classList.toggle('open', open);
+    menu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+    html.classList.toggle('menu-lock', open);
+    if (typeof lenis !== 'undefined' && lenis) { open ? lenis.stop() : lenis.start(); }
+  }
+  burger.addEventListener('click', function () { setOpen(!menu.classList.contains('open')); });
+  // capture phase: unlock scrolling first, then the normal anchor handler scrolls
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  }, true);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) setOpen(false);
+  });
+  window.matchMedia('(min-width:601px)').addEventListener('change', function (m) {
+    if (m.matches && menu.classList.contains('open')) setOpen(false);
+  });
+})();
 </script>
 </body>
 </html>
