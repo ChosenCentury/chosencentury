@@ -206,38 +206,14 @@ nav.stuck { background:rgba(6,6,6,.95); backdrop-filter:blur(16px); padding-top:
   letter-spacing:.18em; color:var(--gold);
 }
 
-.drop-hero {
-  position:relative; width:100%; overflow:hidden;
-  aspect-ratio:6/5; margin-bottom:clamp(8px,1.5vw,14px);
-  background:var(--black);
-}
-@media (max-width:600px) { .drop-hero { aspect-ratio:4/3.4; } }
-.drop-hero img {
-  width:100%; height:100%; object-fit:cover; object-position:center 12%;
-  filter:brightness(.9);
-  transition:transform .8s cubic-bezier(.25,.46,.45,.94), filter .4s;
-}
-.drop-hero:hover img { transform:scale(1.02); filter:brightness(1); }
-.drop-hero-overlay {
-  position:absolute; bottom:0; left:0; right:0;
-  padding:clamp(20px,4vw,52px);
-  background:linear-gradient(0deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.4) 50%, transparent 100%);
-}
-.drop-hero-feat {
-  font-size:9px; font-weight:600; letter-spacing:.35em; text-transform:uppercase;
-  color:var(--gold); margin-bottom:10px;
-}
-@media (max-width:600px) {
-  .drop-hero-feat { font-size:7px; letter-spacing:.2em; margin-bottom:6px; }
-}
-.drop-hero-overlay h3 {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(36px,7vw,88px); letter-spacing:.08em; line-height:.9;
-}
-.drop-hero-overlay p {
-  font-family:'EB Garamond',serif; font-style:italic;
-  font-size:clamp(13px,1.8vw,18px); color:rgba(255,255,255,.45); margin-top:8px;
-}
+.drop-hero { position:relative; width:100%; overflow:hidden; background:#050505; margin-bottom:clamp(8px,1.5vw,14px); }
+.drop-hero img { width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; display:block; transition:transform .8s cubic-bezier(.25,.46,.45,.94); }
+.drop-hero:hover img { transform:scale(1.02); }
+.drop-hero-overlay { position:static; background:none; padding:18px 4px 6px; }
+.drop-hero-feat { font-size:9px; font-weight:600; letter-spacing:.35em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+@media (max-width:600px) { .drop-hero-feat { font-size:7px; letter-spacing:.2em; } }
+.drop-hero-overlay h3 { font-family:'Bebas Neue',sans-serif; font-size:clamp(30px,5vw,56px); letter-spacing:.08em; line-height:.95; }
+.drop-hero-overlay p { font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(13px,1.8vw,18px); color:rgba(255,255,255,.45); margin-top:6px; }
 
 .drop-grid {
   display:grid;
@@ -440,6 +416,11 @@ html.menu-lock { overflow:hidden; }
   .mm-social a { font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.32); }
 }
 @media (min-width:900px) { .mobile-menu { align-items:center; } .mm-links, .mm-social { width:min(560px,100%); } }
+
+/* TIGHTER GAP: HERO -> WINTER UNIFORM */
+.hero { min-height:78svh; }
+.fw-countdown.spy { padding-top:clamp(40px,6vw,70px); padding-bottom:clamp(28px,4vw,48px); }
+.summer-drop.spy { padding-top:clamp(36px,5vw,60px); }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYLCB7ZZYS"></script>
@@ -557,9 +538,12 @@ html.menu-lock { overflow:hidden; }
   </div>
 
   <div class="drop-hero reveal d1">
-    <img src="cc-look-lion-hoodie.webp" alt="Lion Graphic Hoodie" loading="lazy" decoding="async">
+    <img src="cc-look-trust-hero-2000.webp"
+         srcset="cc-look-trust-hero-700.webp 700w, cc-look-trust-hero-1200.webp 1200w, cc-look-trust-hero-2000.webp 2000w"
+         sizes="100vw" width="2000" height="1250"
+         alt="Trust In G-D Hoodie, front and back" loading="lazy" decoding="async">
     <div class="drop-hero-overlay">
-      <p class="drop-hero-feat">Featuring · The Lion Graphic Hoodie</p>
+      <p class="drop-hero-feat">Featuring · The Trust In G-D Hoodie</p>
       <h3>The Winter Uniform</h3>
       <p>Real Hoodies. Free US Shipping.</p>
     </div>
@@ -639,8 +623,8 @@ html.menu-lock { overflow:hidden; }
       <div class="lbook-overlay"><p>Winter Uniform</p><h4>Faith Over Fear Hoodie</h4></div>
     </div>
     <div class="lbook-card">
-      <img src="cc-look-trust-in-gd.webp" alt="Trust In G-D Hoodie" loading="lazy" decoding="async">
-      <div class="lbook-overlay"><p>Winter Uniform</p><h4>Trust In G-D Hoodie</h4></div>
+      <img src="cc-look-lion-hoodie.webp" alt="Lion Graphic Hoodie" loading="lazy" decoding="async">
+      <div class="lbook-overlay"><p>Winter Uniform</p><h4>Lion Graphic Hoodie</h4></div>
     </div>
     <div class="lbook-card">
       <img src="cc-look-lion-zip.webp" alt="Lion Graphic Zip Up" loading="lazy" decoding="async">
